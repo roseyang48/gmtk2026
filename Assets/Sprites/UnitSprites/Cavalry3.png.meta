@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: 59306f92ce95fc7449f1110a0f63b7d9
+guid: 8aea54081031cce4b8823f5c6961f853
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6792278558781045438
-    second: Peasant2_0
+      213: 2262969302011736473
+    second: Cavalry3_0
   - first:
-      213: -3018825233818649499
-    second: Peasant2_1
+      213: -9144971873402644972
+    second: Cavalry3_1
+  - first:
+      213: -6945744134903817960
+    second: Cavalry3_2
+  - first:
+      213: 6162444974801460269
+    second: Cavalry3_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 180
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -116,7 +122,73 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Peasant2_0
+      name: Cavalry3_0
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 218
+        width: 25
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 991f508279ea76f10800000000000000
+      internalID: 2262969302011736473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavalry3_1
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 44
+        width: 53
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41695e48888861180800000000000000
+      internalID: -9144971873402644972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavalry3_2
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 218
+        width: 19
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8191e4a6282cb9f90800000000000000
+      internalID: -6945744134903817960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavalry3_3
       rect:
         serializedVersion: 2
         x: 49
@@ -131,30 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2458a5843aafcb1a0800000000000000
-      internalID: -6792278558781045438
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Peasant2_1
-      rect:
-        serializedVersion: 2
-        x: 209
-        y: 48
-        width: 45
-        height: 207
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 56cf04bb17afa16d0800000000000000
-      internalID: -3018825233818649499
+      spriteID: d2c9ee6fd07658550800000000000000
+      internalID: 6162444974801460269
       vertices: []
       indices: 
       edges: []
@@ -173,8 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Peasant2_0: -6792278558781045438
-      Peasant2_1: -3018825233818649499
+      Cavalry3_0: 2262969302011736473
+      Cavalry3_1: -9144971873402644972
+      Cavalry3_2: -6945744134903817960
+      Cavalry3_3: 6162444974801460269
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
