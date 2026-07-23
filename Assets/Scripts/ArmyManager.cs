@@ -108,7 +108,18 @@ public class ArmyManager : MonoBehaviour
 
     public int GetUnitCapacity()
     {
-        return baseUnitCapacity;
+        int bonusUnitCapacity = 0;
+
+        Building[] buildings = GameManager.Instance.GetConstructedBuildings();
+        for (int i = 0; i < buildings.Length; i++)
+        {
+            if (buildings[i] != null)
+            {
+                bonusUnitCapacity = buildings[i].GetUnitCapacityBonus();
+            }
+        }
+
+        return baseUnitCapacity + bonusUnitCapacity;
     }
 
     public int GetUnitCount()

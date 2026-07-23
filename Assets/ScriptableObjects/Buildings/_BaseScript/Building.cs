@@ -78,5 +78,11 @@ public class Building : ScriptableObject
         return unitCapacityBonus;
     }
 
+    [SerializeField]
+    bool isInfantryUnlocker;
 
+    public bool IsInfantryUnlocker()
+    {
+        return isInfantryUnlocker;
+    }
 }
