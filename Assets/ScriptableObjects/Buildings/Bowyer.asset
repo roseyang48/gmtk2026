@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: Bowyer
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingName: Bowyer
+  woodCost: 250
+  goldCost: 150
+  goldUpkeep: 2

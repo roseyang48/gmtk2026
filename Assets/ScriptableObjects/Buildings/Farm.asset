@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: Farm
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingName: Farm
+  woodCost: 50
+  goldCost: 50
+  goldUpkeep: 0

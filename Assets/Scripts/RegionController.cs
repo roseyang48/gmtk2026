@@ -18,12 +18,12 @@ public class RegionController : MonoBehaviour
     int buildingSlots = 2;
 
     [SerializeField]
-    Building[] constructedBuildings = {null, null};
+    Building[] constructedBuildings;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        constructedBuildings = new Building[buildingSlots];
     }
 
     // Update is called once per frame

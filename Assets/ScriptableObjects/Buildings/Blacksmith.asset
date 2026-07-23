@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: Blacksmith
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingName: Blacksmith
+  woodCost: 200
+  goldCost: 200
+  goldUpkeep: 2

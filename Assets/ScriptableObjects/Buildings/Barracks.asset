@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: Barracks
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingName: Barracks
+  woodCost: 100
+  goldCost: 100
+  goldUpkeep: 1

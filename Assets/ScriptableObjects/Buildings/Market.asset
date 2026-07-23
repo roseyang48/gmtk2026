@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: Market
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingName: Market
+  woodCost: 100
+  goldCost: 0
+  goldUpkeep: 0

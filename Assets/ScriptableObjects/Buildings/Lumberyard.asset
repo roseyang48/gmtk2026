@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: Lumberyard
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingName: Lumberyard
+  woodCost: 0
+  goldCost: 100
+  goldUpkeep: 0

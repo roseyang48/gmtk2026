@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: Stables
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingName: Stables
+  woodCost: 250
+  goldCost: 300
+  goldUpkeep: 3
