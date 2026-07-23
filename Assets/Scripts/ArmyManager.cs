@@ -12,13 +12,7 @@ public class ArmyManager : MonoBehaviour
         CAVALRY,
     }
 
-    int peasantCount = 3;
-
-    int infantryCount = 2;
-
-    int rangedCount = 1;
-
-    int cavalryCount = 0;
+    Army army;
 
     int baseUnitCapacity = 10;
 
@@ -34,36 +28,24 @@ public class ArmyManager : MonoBehaviour
         }
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void BuildNewUnit(UnitType unitType)
     {
         switch (unitType)
         {
             case UnitType.PEASANT:
-                peasantCount += 1;
+                army.peasantCount += 1;
                 break;
             case UnitType.INFANTRY:
-                peasantCount -= 1;
-                infantryCount += 1;
+                army.peasantCount -= 1;
+                army.infantryCount += 1;
                 break;
             case UnitType.RANGED:
-                peasantCount -= 1;
-                rangedCount += 1;
+                army.peasantCount -= 1;
+                army.rangedCount += 1;
                 break;
             case UnitType.CAVALRY:
-                peasantCount -= 1;
-                cavalryCount += 1;
+                army.peasantCount -= 1;
+                army.cavalryCount += 1;
                 break;
             default:
                 Debug.LogError("Invalid Unit Type");
@@ -77,16 +59,16 @@ public class ArmyManager : MonoBehaviour
         switch (unitType)
         {
             case UnitType.PEASANT:
-                peasantCount -= amount;
+                army.peasantCount -= amount;
                 break;
             case UnitType.INFANTRY:
-                infantryCount -= amount;
+                army.infantryCount -= amount;
                 break;
             case UnitType.RANGED:
-                rangedCount -= amount;
+                army.rangedCount -= amount;
                 break;
             case UnitType.CAVALRY:
-                cavalryCount -= amount;
+                army.cavalryCount -= amount;
                 break;
             default:
                 Debug.LogError("Invalid Unit Type");
@@ -100,13 +82,13 @@ public class ArmyManager : MonoBehaviour
         switch (unitType)
         {
             case UnitType.PEASANT:
-                return peasantCount;
+                return army.peasantCount;
             case UnitType.INFANTRY:
-                return infantryCount;
+                return army.infantryCount;
             case UnitType.RANGED:
-                return rangedCount;
+                return army.rangedCount;
             case UnitType.CAVALRY:
-                return cavalryCount;
+                return army.cavalryCount;
             default:
                 Debug.LogError("Invalid Unit Type");
                 Debug.Break();
@@ -121,6 +103,6 @@ public class ArmyManager : MonoBehaviour
 
     public int GetUnitCount()
     {
-        return peasantCount + infantryCount + rangedCount + cavalryCount;
+        return army.peasantCount + army.infantryCount + army.rangedCount + army.cavalryCount;
     }
 }
