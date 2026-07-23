@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 739599209838504656}
   - component: {fileID: 5860277147730188804}
   - component: {fileID: 4253466190904179574}
+  - component: {fileID: 8999806838620750224}
   m_Layer: 5
   m_Name: BuildingButton
   m_TagString: Untagged
@@ -287,6 +288,18 @@ MonoBehaviour:
   buildingIndex: -1
   buildingIcon: {fileID: 1238771136209483447}
   buildingName: {fileID: 4205171148877572950}
+--- !u!225 &8999806838620750224
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3838187194689615874}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &6752560469364431732
 GameObject:
   m_ObjectHideFlags: 0

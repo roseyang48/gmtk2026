@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class ArmyManager : MonoBehaviour
 {
@@ -11,6 +12,14 @@ public class ArmyManager : MonoBehaviour
         RANGED,
         CAVALRY,
     }
+
+    Dictionary<UnitType, int> foodUpkeep = new Dictionary<UnitType, int>()
+    {
+        {UnitType.PEASANT, 1},
+        {UnitType.INFANTRY, 2},
+        {UnitType.RANGED, 2},
+        {UnitType.CAVALRY, 4},
+    };
 
     [SerializeField]
     Army army;
@@ -105,5 +114,10 @@ public class ArmyManager : MonoBehaviour
     public int GetUnitCount()
     {
         return army.GetArmySize();
+    }
+
+    public int GetFoodUpkeep(UnitType unitType)
+    {
+        return foodUpkeep[unitType] * GetUnitCount(unitType);
     }
 }

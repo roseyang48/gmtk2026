@@ -50,6 +50,12 @@ public class ResourceCanvasController : MonoBehaviour
         woodCounter.text = ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.WOOD).ToString();
         foodCounter.text = ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.FOOD).ToString();
 
+        int[] buildingUpkeep = GameManager.Instance.ComputeUpkeep();
+
+        goldTrendCounter.text = (buildingUpkeep[0] > 0 ? "+" : "") + buildingUpkeep[0].ToString();
+        foodTrendCounter.text = (buildingUpkeep[1] > 0 ? "+" : "") + buildingUpkeep[1].ToString();
+        woodTrendCounter.text = (buildingUpkeep[2] > 0 ? "+" : "") + buildingUpkeep[2].ToString();
+
         unitCapacityCounter.text = ArmyManager.Instance.GetUnitCount() + "/" + ArmyManager.Instance.GetUnitCapacity();
 
         unit0Counter.text = ArmyManager.Instance.GetUnitCount(ArmyManager.UnitType.PEASANT).ToString();
