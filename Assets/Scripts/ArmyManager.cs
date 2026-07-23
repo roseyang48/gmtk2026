@@ -104,6 +104,6 @@ public class ArmyManager : MonoBehaviour
 
     public int GetUnitCount()
     {
-        return army.armySize();
+        return army.GetArmySize();
     }
 }
