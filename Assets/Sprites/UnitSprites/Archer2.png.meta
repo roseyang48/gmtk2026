@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 2bfa5fac393b5504986cc2e3752f26b4
+guid: 7c9163911a383e9439e378b0c21c4600
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7742358082320047022
-    second: Peasant_0
-  - first:
-      213: 5269843581797548616
-    second: Peasant_1
+      213: -2191259430094511970
+    second: Archer2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 180
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -116,45 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Peasant_0
+      name: Archer2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 256
-        height: 256
+        x: 49
+        y: 47
+        width: 206
+        height: 173
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eab9f84b7a1627b60800000000000000
-      internalID: 7742358082320047022
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Peasant_1
-      rect:
-        serializedVersion: 2
-        x: 209
-        y: 22
-        width: 45
-        height: 207
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8424aea11de322940800000000000000
-      internalID: 5269843581797548616
+      spriteID: e90ed7a78251791e0800000000000000
+      internalID: -2191259430094511970
       vertices: []
       indices: 
       edges: []
@@ -163,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 14765ef36e72cd9479ae9287baaa4817
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -173,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Peasant_0: 7742358082320047022
-      Peasant_1: 5269843581797548616
+      Archer2_0: -2191259430094511970
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

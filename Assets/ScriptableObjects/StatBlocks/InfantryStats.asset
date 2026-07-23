@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16143b476ea38154abcd0c1566dbdb7c, type: 3}
   m_Name: InfantryStats
   m_EditorClassIdentifier: Assembly-CSharp::StatBlock
-  maxHP: 21
-  attackInterval: 0.6
+  maxHP: 31
+  attackInterval: 0.4
   attackDamage: 2
-  attackRange: 1.5
+  attackRange: 1
   moveSpeed: 3
   rotationSpeed: 8
   fleeThreshhold: 0.3

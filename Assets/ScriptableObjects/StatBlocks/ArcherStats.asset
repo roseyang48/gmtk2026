@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16143b476ea38154abcd0c1566dbdb7c, type: 3}
   m_Name: ArcherStats
   m_EditorClassIdentifier: Assembly-CSharp::StatBlock
-  maxHP: 7
-  attackInterval: 0.8
-  attackDamage: 3
+  maxHP: 10
+  attackInterval: 0.6
+  attackDamage: 2.5
   attackRange: 5
   moveSpeed: 3
   rotationSpeed: 8

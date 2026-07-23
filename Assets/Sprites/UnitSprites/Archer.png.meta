@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 996a1269c855b814393f1592bfad6734
+guid: 52b952003e653ba48bfae09df24e90ee
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6504473842130613247
-    second: Cavalry_0
-  - first:
-      213: 1887771600451619798
-    second: Cavalry_1
+      213: -7132172409892320828
+    second: Archer_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 180
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -116,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cavalry_0
+      name: Archer_0
       rect:
         serializedVersion: 2
         x: 49
         y: 47
-        width: 168
-        height: 166
+        width: 206
+        height: 173
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 10c0cf4b0877bb5a0800000000000000
-      internalID: -6504473842130613247
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cavalry_1
-      rect:
-        serializedVersion: 2
-        x: 203
-        y: 23
-        width: 53
-        height: 203
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6db4dfdc446b23a10800000000000000
-      internalID: 1887771600451619798
+      spriteID: 4c9c6872bfe650d90800000000000000
+      internalID: -7132172409892320828
       vertices: []
       indices: 
       edges: []
@@ -173,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Cavalry_0: -6504473842130613247
-      Cavalry_1: 1887771600451619798
+      Archer_0: -7132172409892320828
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
