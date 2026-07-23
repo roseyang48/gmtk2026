@@ -3,6 +3,10 @@ using UnityEngine;
 public class Archer : Unit
 {
     [SerializeField] GameObject arrow;
+    public override void Attack()
+    {
+        animator.Play("ArcherAttack");
+    }
     public override void OnHitEnemy(Unit target)
     {
         Vector2 targetPos = target.transform.position;
