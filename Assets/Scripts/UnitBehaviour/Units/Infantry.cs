@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class Peasant : Unit
+public class Infantry : Unit
 {
     public override void Attack()
     {
-        animator.Play("PeasantAttack");
+        animator.Play("InfantryAttack");
     }
 }

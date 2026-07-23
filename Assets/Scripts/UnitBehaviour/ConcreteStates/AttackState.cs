@@ -15,7 +15,7 @@ public class AttackState : UnitState
         base.EnterState();
         unit.rb.MoveRotation(Vector2.SignedAngle(Vector2.up, unit.targetUnit.transform.position - unit.transform.position));
         unit.SetObstacle(true);
-        attackTimer += Random.Range(0f, unit.statBlock.attackInterval/5);
+        attackTimer += Random.Range(unit.statBlock.attackInterval * 0.8f, unit.statBlock.attackInterval);
     }
 
     public override void ExitState()
