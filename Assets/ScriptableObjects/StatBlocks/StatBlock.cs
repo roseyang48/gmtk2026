@@ -11,4 +11,6 @@ public class StatBlock : ScriptableObject
     public float rotationSpeed;
     public float fleeThreshhold;
     public float fleeChance;
+    [Header("Archer Stats")]
+    public float projectileSpeed;
 }
