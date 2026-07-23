@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class RegionUIController : MonoBehaviour
 {
@@ -23,15 +24,33 @@ public class RegionUIController : MonoBehaviour
     RectTransform armyTransform;
 
     [SerializeField]
-    TMPro.TextMeshProUGUI regionNameLabel;
+    TextMeshProUGUI regionNameLabel;
 
     [SerializeField]
-    TMPro.TextMeshProUGUI occupationLabel;
+    TextMeshProUGUI occupationLabel;
 
     [SerializeField]
     BuildingButtonController[] buildingButtons;
 
 
+    [SerializeField]
+    TextMeshProUGUI buildingName;
+
+    [SerializeField]
+    TextMeshProUGUI buildingDescription;
+
+    [SerializeField]
+    TextMeshProUGUI buildingGoldCost;
+
+    [SerializeField]
+    TextMeshProUGUI buildingWoodCost;
+
+    [SerializeField]
+    Button confirmButton;
+
+
+    int activeBuildingSlot;
+    Building selectedBuilding;
 
     RegionController activeRegion;
 
@@ -85,16 +104,9 @@ public class RegionUIController : MonoBehaviour
             HideBuildMenu();
         }
 
-        for (int i = 0; i < buildingButtons.Length; i++)
-        {
-            if (region.GetBuildingSlots() > i)
-            {
-                buildingButtons[i].gameObject.SetActive(true);
-                buildingButtons[i].SetBuilding(region.GetConstructedBuildings()[i]);
-            }
-        }
-
         activeRegion = region;
+
+        RedrawBuildings();
     }
 
     public void HideCanvas()
@@ -108,11 +120,17 @@ public class RegionUIController : MonoBehaviour
         HideBuildMenu();
     }
 
-    public void ShowBuildMenu()
+    public void ShowBuildMenu(int buildingSlot)
     {
         buildCanvasGroup.alpha = 1f;
         buildCanvasGroup.interactable = true;
         buildCanvasGroup.blocksRaycasts = true;
+
+        buildRectTransform.sizeDelta = new Vector2(buildRectTransform.sizeDelta.x, mainRectTransform.sizeDelta.y);
+
+        activeBuildingSlot = buildingSlot;
+
+        DrawBuildingInfo(null);
     }
 
     public void HideBuildMenu()
@@ -123,8 +141,64 @@ public class RegionUIController : MonoBehaviour
 
         for (int i = 0; i < buildingButtons.Length; i++)
         {
-            buildingButtons[i].gameObject.SetActive(false);
+            buildingButtons[i].GetComponent<CanvasGroup>().alpha = 0;
+            buildingButtons[i].GetComponent<CanvasGroup>().interactable = false;
+            buildingButtons[i].GetComponent<CanvasGroup>().blocksRaycasts = false;
         }
     }
 
+    public void DrawBuildingInfo(Building building)
+    {
+        if (building == null)
+        {
+            buildingName.text = "None";
+            buildingDescription.text = "";
+            buildingGoldCost.text = "--- Gold";
+            buildingWoodCost.text = "--- Wood";
+            confirmButton.interactable = false;
+            return;
+        }
+
+        selectedBuilding = building;
+
+        buildingName.text = building.GetBuildingName();
+        buildingDescription.text = building.GetBuildingDescription();
+        buildingGoldCost.text = building.GetGoldCost() + " Gold";
+        buildingWoodCost.text = building.GetWoodCost() + " Wood";
+
+        if (building.GetGoldCost() > ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.GOLD) || building.GetWoodCost() > ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.WOOD))
+        {
+            confirmButton.interactable = false;
+        }//Can add more conditionals here
+        else
+        {
+            confirmButton.interactable = true;
+        }
+    }
+
+    public void ConfirmBuilding()
+    {
+        activeRegion.ConstructBuilding(selectedBuilding, activeBuildingSlot);
+
+        ResourceManager.Instance.SpendResource(ResourceManager.ResourceType.GOLD, selectedBuilding.GetGoldCost());
+        ResourceManager.Instance.SpendResource(ResourceManager.ResourceType.WOOD, selectedBuilding.GetWoodCost());
+
+        HideBuildMenu();
+        RedrawBuildings();
+    }
+
+    void RedrawBuildings()
+    {
+        for (int i = 0; i < buildingButtons.Length; i++)
+        {
+            if (activeRegion.GetBuildingSlots() > i)
+            {
+                buildingButtons[i].GetComponent<CanvasGroup>().alpha = 1;
+                buildingButtons[i].GetComponent<CanvasGroup>().interactable = true;
+                buildingButtons[i].GetComponent<CanvasGroup>().blocksRaycasts = true;
+
+                buildingButtons[i].SetBuilding(activeRegion.GetConstructedBuildings()[i]);
+            }
+        }
+    }
 }

@@ -18,8 +18,6 @@ public class BuildOptionController : MonoBehaviour
     void Start()
     {
         buildingName.text = buildingOption.GetBuildingName();
-        buildingGoldCost.text = "Gold Cost: " + buildingOption.GetGoldCost();
-        buildingWoodCost.text = "Wood Cost: " + buildingOption.GetWoodCost();
     }
 
     // Update is called once per frame
@@ -30,6 +28,6 @@ public class BuildOptionController : MonoBehaviour
 
     public void OptionSelected()
     {
-        
+        GameManager.Instance.BuildingOptionSelected(buildingOption);
     }
 }

@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: Bowyer
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingName: Bowyer
+  buildingDescription: Unlocks access to Ranged.
   woodCost: 250
   goldCost: 150
-  goldUpkeep: 2
+  goldUpkeep: 10
+  goldIncome: 0
+  foodIncome: 0
+  woodIncome: 0
+  unitCapacityBonus: 0

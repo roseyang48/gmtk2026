@@ -15,6 +15,9 @@ public class RegionController : MonoBehaviour
     RegionController[] neighborRegions;
 
     [SerializeField]
+    int regionIncome = 0;
+
+    [SerializeField]
     int buildingSlots = 2;
 
     [SerializeField]
@@ -56,6 +59,11 @@ public class RegionController : MonoBehaviour
         return isRegionOccupied;
     }
 
+    public int GetRegionIncome()
+    {
+        return regionIncome;
+    }
+
     public int GetBuildingSlots()
     {
         return buildingSlots;
@@ -64,5 +72,10 @@ public class RegionController : MonoBehaviour
     public Building[] GetConstructedBuildings()
     {
         return constructedBuildings;
+    }
+
+    public void ConstructBuilding(Building building, int slot)
+    {
+        constructedBuildings[slot] = building;
     }
 }

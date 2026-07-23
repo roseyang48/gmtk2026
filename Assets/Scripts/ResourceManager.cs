@@ -76,4 +76,25 @@ public class ResourceManager : MonoBehaviour
                 return -1;
         }
     }
+
+    // Returns amount left?
+    public int GainResource(ResourceType resourceType, int amount)
+    {
+        switch (resourceType)
+        {
+            case ResourceType.GOLD:
+                goldCount += amount;
+                return goldCount;
+            case ResourceType.FOOD:
+                foodCount += amount;
+                return foodCount;
+            case ResourceType.WOOD:
+                woodCount += amount;
+                return woodCount;
+            default:
+                Debug.LogError("Invalid Resource Type");
+                Debug.Break();
+                return -1;
+        }
+    }
 }
