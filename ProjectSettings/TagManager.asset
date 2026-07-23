@@ -4,6 +4,10 @@
 TagManager:
   serializedVersion: 3
   tags:
+  - PlayerUnit
+  - EnemyUnit
+  - PlayerFleePoint
+  - EnemyFleePoint
   - CancelCollider
   layers:
   - Default
