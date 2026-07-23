@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class FleePointScript : MonoBehaviour
 {
-    [SerializeField] private Unit.Team team;
+    [SerializeField] private CombatHandler.Team team;
     public void OnTriggerEnter2D(Collider2D collision)
     {
         Unit collisionUnit = collision.GetComponent<Unit>();
@@ -10,14 +10,14 @@ public class FleePointScript : MonoBehaviour
         {
             switch(team)
             {
-                case Unit.Team.Player:
+                case CombatHandler.Team.Player:
                     if(collision.gameObject.tag == "PlayerUnit")
                     {
                         //MAKE SURE TO DO THE THING THAT INCREMENTS SURVIVORS :D
                         Destroy(collision.gameObject);
                     }
                     break;
-                case Unit.Team.Enemy:
+                case CombatHandler.Team.Enemy:
                     if(collision.gameObject.tag == "EnemyUnit")
                     {
                         //DO IT HERE TOO :3

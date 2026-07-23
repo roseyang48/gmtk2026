@@ -9,4 +9,9 @@ public class Army
     public int rangedCount = 0;
 
     public int cavalryCount = 0;
+
+    public int armySize()
+    {
+        return peasantCount + infantryCount + rangedCount + cavalryCount;
+    }
 }
