@@ -104,6 +104,6 @@ public class ArmyManager : MonoBehaviour
 
     public int GetUnitCount()
     {
-        return army.peasantCount + army.infantryCount + army.rangedCount + army.cavalryCount;
+        return army.armySize();
     }
 }

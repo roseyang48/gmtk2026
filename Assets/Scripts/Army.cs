@@ -14,4 +14,9 @@ public class Army
 
     [SerializeField]
     public int cavalryCount = 0;
+
+    public int armySize()
+    {
+        return peasantCount + infantryCount + rangedCount + cavalryCount;
+    }
 }

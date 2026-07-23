@@ -18,7 +18,7 @@ public class FleeState : UnitState
     public override void Update()
     {
         base.Update();
-        if(unit.unitTeam == Unit.Team.Player)
+        if(unit.unitTeam == CombatHandler.Team.Player)
         {
             Vector2 targetPos = new Vector2(unit.transform.position.x, GameObject.FindGameObjectWithTag("PlayerFleePoint").transform.position.y);
             unit.SetTarget(targetPos);

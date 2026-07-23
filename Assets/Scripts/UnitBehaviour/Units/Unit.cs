@@ -5,14 +5,13 @@ using UnityEngine.AI;
 
 public class Unit : MonoBehaviour
 {
-    public enum Team {Player, Enemy}
     public enum AnimationTriggerType {Hit, Damaged}
     public StatBlock statBlock;
     protected float currHP;
     [HideInInspector]
     public Unit targetUnit;
     [HideInInspector]
-    public Team unitTeam;
+    public CombatHandler.Team unitTeam;
     public Animator animator;
     public Rigidbody2D rb;
     public SpriteRenderer hpSprite;
@@ -26,6 +25,7 @@ public class Unit : MonoBehaviour
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private NavMeshObstacle obstacle;
     private bool hasFled;
+    [SerializeField] private SpriteRenderer hatSprite;
 
     void Awake()
     {
@@ -44,23 +44,16 @@ public class Unit : MonoBehaviour
     void Start()
     {
         currHP = statBlock.maxHP;
-        switch(gameObject.tag)
-        {
-            case "PlayerUnit":
-                unitTeam = Team.Player;
-                break;
-            case "EnemyUnit":
-                unitTeam = Team.Enemy;
-                break;
-            default:
-                Debug.LogError("UNRECOGNIZED UNIT TAG");
-                break;
-        }
         hpSprite.GetPropertyBlock(mpb);
         mpb.SetFloat("_Arc2", 360 * (1 - currHP / statBlock.maxHP));
         hpSprite.SetPropertyBlock(mpb);
         hpSprite.color = hpGradient.Evaluate(1 - currHP / statBlock.maxHP);
         StateMachine.Initialize(IdleState);
+    }
+    void InitializeUnit(Color hatColor, CombatHandler.Team team)
+    {
+        unitTeam = team;
+        hatSprite.color = hatColor;
     }
     void Update()
     {
@@ -165,11 +158,11 @@ public class Unit : MonoBehaviour
     {
         float minDistance = float.PositiveInfinity;
         GameObject[] targetArray = {};
-        if(unitTeam == Team.Enemy)
+        if(unitTeam == CombatHandler.Team.Enemy)
         {
             targetArray = GameObject.FindGameObjectsWithTag("PlayerUnit");
         }
-        else if(unitTeam == Team.Player)
+        else if(unitTeam == CombatHandler.Team.Player)
         {
             targetArray = GameObject.FindGameObjectsWithTag("EnemyUnit");
         }

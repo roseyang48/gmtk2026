@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class ArrowScript : MonoBehaviour
 {
-    private Unit.Team owner;
+    private CombatHandler.Team owner;
     private float damage;
     [SerializeField] private Rigidbody2D rb;
-    public void Initialize(Unit.Team owner, Vector3 velocity, float damage)
+    public void Initialize(CombatHandler.Team owner, Vector3 velocity, float damage)
     {
         this.owner = owner;
         rb.linearVelocity = velocity;
@@ -16,14 +16,14 @@ public class ArrowScript : MonoBehaviour
     {
         switch(owner)
         {
-            case Unit.Team.Player:
+            case CombatHandler.Team.Player:
                 if(collision.tag == "EnemyUnit")
                 {
                     collision.GetComponent<Unit>().ChangeHP(-damage);
                     Destroy(gameObject);
                 }
                 break;
-            case Unit.Team.Enemy:
+            case CombatHandler.Team.Enemy:
                 if(collision.tag == "PlayerUnit")
                 {
                     collision.GetComponent<Unit>().ChangeHP(-damage);
