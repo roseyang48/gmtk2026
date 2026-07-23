@@ -1,0 +1,15 @@
+using UnityEngine;
+
+public class Archer : Unit
+{
+    [SerializeField] GameObject arrow;
+    public override void OnHitEnemy(Unit target)
+    {
+        Vector2 targetPos = target.transform.position;
+        GameObject arrowInstance = Instantiate(arrow, transform.position, Quaternion.identity);
+        arrowInstance.GetComponent<Rigidbody2D>().MoveRotation(Mathf.Atan2(targetPos.y - transform.position.y, targetPos.x - transform.position.x)*Mathf.Rad2Deg + 90);
+        arrowInstance.GetComponent<ArrowScript>().Initialize(unitTeam,
+            (target.transform.position - transform.position).normalized * statBlock.projectileSpeed,
+            statBlock.attackDamage);
+    }
+}

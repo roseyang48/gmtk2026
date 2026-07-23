@@ -25,7 +25,7 @@ public class Unit : MonoBehaviour
     protected MaterialPropertyBlock mpb;
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private NavMeshObstacle obstacle;
-    private bool hasFleed;
+    private bool hasFled;
 
     void Awake()
     {
@@ -64,9 +64,9 @@ public class Unit : MonoBehaviour
     }
     void Update()
     {
-        if(currHP/statBlock.maxHP <= statBlock.fleeThreshhold && StateMachine.currState != FleeState && !hasFleed)
+        if(currHP/statBlock.maxHP <= statBlock.fleeThreshhold && StateMachine.currState != FleeState && !hasFled)
         {
-            hasFleed = true;
+            hasFled = true;
             if(Random.Range(0f,1f) <= statBlock.fleeChance)
             {
                 StateMachine.ChangeState(FleeState);
@@ -115,13 +115,16 @@ public class Unit : MonoBehaviour
             if(agent.isActiveAndEnabled)
             {
                 agent.SetDestination(target);
-                Debug.Log(agent.destination);
             }
         }
     }
     public virtual void ChangeHP(float value)
     {
         currHP += value;
+        if(value < 0)
+        {
+            animator.Play("Damaged");
+        }
         if(currHP <= 0)
         {
             Die();
