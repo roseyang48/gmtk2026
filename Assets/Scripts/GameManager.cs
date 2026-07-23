@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
         else
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
     }
 
@@ -55,5 +57,17 @@ public class GameManager : MonoBehaviour
     public void CancelAction()
     {
         regionUIController.HideCanvas();
+    }
+
+    public Building[] GetConstructedBuildings()
+    {
+        List<Building> buildings = new List<Building>();
+
+        for (int i = 0; i < regions.Length; i++)
+        {
+            buildings.AddRange(regions[i].GetConstructedBuildings());
+        }
+
+        return buildings.ToArray();
     }
 }

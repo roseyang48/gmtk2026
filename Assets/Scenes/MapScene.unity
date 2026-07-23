@@ -2131,6 +2131,84 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4595660206014772866, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
   m_PrefabInstance: {fileID: 562537034}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &623711310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 623711311}
+  - component: {fileID: 623711312}
+  m_Layer: 0
+  m_Name: CancelCollider
+  m_TagString: CancelCollider
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &623711311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623711310}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2089594028}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &623711312
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623711310}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 30, y: 20}
+  m_EdgeRadius: 0
 --- !u!1001 &637138626
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4114,6 +4192,7 @@ GameObject:
   - component: {fileID: 1647395946}
   - component: {fileID: 1647395947}
   - component: {fileID: 1647395948}
+  - component: {fileID: 1647395949}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4186,6 +4265,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: aff71db4e40f54f7ab4ffc4ac9091528, type: 2}
   - {fileID: 11400000, guid: af838f9b5d4f54885b575719a9893d7c, type: 2}
   - {fileID: 11400000, guid: f8be2996171374e33a1d9ad7fe237ea0, type: 2}
+--- !u!114 &1647395949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647395945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95bc0868ea45f4182ac669bfa38be7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ArmyManager
 --- !u!114 &1699127149 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 888101466421444666, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
@@ -4662,7 +4753,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ScrollRect
   m_Content: {fileID: 1627417742}
-  m_Horizontal: 1
+  m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 1
   m_Elasticity: 0.1
@@ -5524,6 +5615,7 @@ Transform:
   - {fileID: 1995326110}
   - {fileID: 1307029077}
   - {fileID: 1903277082}
+  - {fileID: 623711311}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2091582722

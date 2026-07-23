@@ -23,9 +23,9 @@ public class ResourceManager : MonoBehaviour
         }
     }
 
-    int goldCount = 0;
-    int foodCount = 0;
-    int woodCount = 0;
+    int goldCount = 100;
+    int foodCount = 100;
+    int woodCount = 100;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
