@@ -8,6 +8,7 @@ TagManager:
   - EnemyUnit
   - PlayerFleePoint
   - EnemyFleePoint
+  - CancelCollider
   layers:
   - Default
   - TransparentFX
