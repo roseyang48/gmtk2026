@@ -22,10 +22,10 @@ public class Unit : MonoBehaviour
     public AttackState AttackState;
     public ChaseState ChaseState;
     protected MaterialPropertyBlock mpb;
-    [SerializeField] private NavMeshAgent agent;
-    [SerializeField] private NavMeshObstacle obstacle;
-    private bool hasFled;
-    [SerializeField] private SpriteRenderer hatSprite;
+    [SerializeField] protected NavMeshAgent agent;
+    [SerializeField] protected NavMeshObstacle obstacle;
+    protected bool hasFled;
+    [SerializeField] protected SpriteRenderer hatSprite;
 
     void Awake()
     {

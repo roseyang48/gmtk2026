@@ -185,6 +185,7 @@ MonoBehaviour:
   chargeTimer: 1
   chargeDamageMod: 2
   chargeTrailRenderer: {fileID: 960194512973431034}
+  minSpeed: 2
 --- !u!50 &6548063503442814132
 Rigidbody2D:
   serializedVersion: 5

@@ -287,14 +287,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ARMYTEST
   testPlayerArmy:
     peasantCount: 0
-    infantryCount: 0
+    infantryCount: 25
     rangedCount: 0
     cavalryCount: 0
   testEnemyArmy:
     peasantCount: 0
     infantryCount: 0
     rangedCount: 0
-    cavalryCount: 0
+    cavalryCount: 20
 --- !u!4 &573268403
 Transform:
   m_ObjectHideFlags: 0

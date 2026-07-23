@@ -1,3 +1,4 @@
+using NavMeshPlus.Extensions;
 using NUnit.Framework;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ public class Cavalry : Unit
     [SerializeField] private float chargeTimer;
     [SerializeField] private float chargeDamageMod;
     [SerializeField] private TrailRenderer chargeTrailRenderer;
+    [SerializeField] private float minSpeed;
     private bool isCharging = false;
     private float timer = 0f;
     public override void Attack()
@@ -33,6 +35,11 @@ public class Cavalry : Unit
                 chargeTrailRenderer.emitting = true;
                 timer = 0f;
             }
+        }
+        if(isCharging && agent.velocity.magnitude <= minSpeed)
+        {
+            isCharging = false;
+            chargeTrailRenderer.emitting = false;
         }
     }
     public override void OnHitEnemy(Unit target)
