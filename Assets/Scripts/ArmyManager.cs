@@ -12,6 +12,7 @@ public class ArmyManager : MonoBehaviour
         CAVALRY,
     }
 
+    [SerializeField]
     Army army;
 
     int baseUnitCapacity = 10;

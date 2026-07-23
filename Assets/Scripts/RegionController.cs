@@ -20,6 +20,9 @@ public class RegionController : MonoBehaviour
     [SerializeField]
     Building[] constructedBuildings;
 
+    [SerializeField]
+    Army regionArmy;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

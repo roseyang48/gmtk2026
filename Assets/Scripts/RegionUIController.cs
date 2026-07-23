@@ -50,6 +50,7 @@ public class RegionUIController : MonoBehaviour
 
     public void ShowCanvas(RegionController region)
     {
+        /*
         // Weird hacky solution?
         if (!region.IsOnScreenLeft())
         {
@@ -67,6 +68,7 @@ public class RegionUIController : MonoBehaviour
             buildRectTransform.anchorMin = new Vector2(.55f, .95f);
             buildRectTransform.anchorMax = new Vector2(.75f, .95f);
         }
+        */
 
         mainCanvasGroup.alpha = 1f;
         mainCanvasGroup.interactable = true;
