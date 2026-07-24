@@ -103,7 +103,12 @@ public class RegionUIController : MonoBehaviour
             HideBuildMenu();
             assaultButton.gameObject.SetActive(true);
 
-            if (neighborLiberated)
+            if (GameManager.Instance.HasAttacked())
+            {
+                assaultButton.interactable = false;
+                assaultButtonText.text = "Already Attacked!";
+            }
+            else if (neighborLiberated)
             {
                 assaultButton.interactable = true;
                 assaultButtonText.text = "Begin Assault!";

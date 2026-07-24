@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
 
     int turnCount = 1;
 
+    bool hasAttacked = false;
+
     public static GameManager Instance;
 
     void Awake()
@@ -147,6 +149,9 @@ public class GameManager : MonoBehaviour
 
     public void AdvanceTurn()
     {
+        unitBuildController.HideCanvas();
+        regionUIController.HideCanvas();
+
         turnCount += 1;
 
         int[] upkeep = ComputeUpkeep();
@@ -177,6 +182,32 @@ public class GameManager : MonoBehaviour
         {
             ResourceManager.Instance.SpendResource(ResourceManager.ResourceType.WOOD, upkeep[2] * -1);
         }
+
+        // Check for win
+        bool stillOccupied = false;
+
+        for (int i = 0; i < RegionManager.Instance.GetAllRegions().Length; i++)
+        {
+            if (RegionManager.Instance.GetRegion(i).IsRegionOccupied())
+            {
+                stillOccupied = true;
+                break;
+            }
+        }
+
+        if (!stillOccupied)
+        {
+            SceneSwitcher.Instance.LoadScene(SceneSwitcher.SceneType.VICTORY);
+        }
+
+        // Check for loss
+        if (ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.GOLD) < 0
+            || ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.FOOD) < 0)
+        {
+            SceneSwitcher.Instance.LoadScene(SceneSwitcher.SceneType.DEFEAT);
+        }
+
+        hasAttacked = false;
     }
 
     public void BeginAssault(int regionNumber)
@@ -196,6 +227,8 @@ public class GameManager : MonoBehaviour
         ArmyManager.Instance.DispatchUnits(ArmyManager.UnitType.RANGED, ArmyManager.Instance.GetUnitCount(ArmyManager.UnitType.RANGED));
         ArmyManager.Instance.DispatchUnits(ArmyManager.UnitType.CAVALRY, ArmyManager.Instance.GetUnitCount(ArmyManager.UnitType.CAVALRY));
 
+        hasAttacked = true;
+
         SceneSwitcher.Instance.LoadScene(SceneSwitcher.SceneType.COMBAT, dispatchArmy, RegionManager.Instance.GetRegion(regionNumber).GetRegionArmy());
     }
 
@@ -213,5 +246,10 @@ public class GameManager : MonoBehaviour
     {
         regionUIController = GameObject.Find("RegionUICanvas").GetComponent<RegionUIController>();
         unitBuildController = GameObject.Find("UnitBuildCanvas").GetComponent<UnitBuildController>();
+    }
+
+    public bool HasAttacked()
+    {
+        return hasAttacked;
     }
 }

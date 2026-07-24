@@ -25,6 +25,8 @@ public class SceneSwitcher : MonoBehaviour
     string mainMenuSceneName = "MainMenu";
     string mapSceneName = "MapScene";
     string combatSceneName = "CombatScene";
+    string victorySceneName = "VictoryScene";
+    string defeatSceneName = "DefeatScene";
 
 
     bool awaitingSceneLoading = false;
@@ -40,6 +42,8 @@ public class SceneSwitcher : MonoBehaviour
         MAP,
         MAP_POST,
         COMBAT,
+        VICTORY,
+        DEFEAT,
     }
 
     public void LoadScene(SceneType sceneType, Army playerArmy, Army enemyArmy, bool wasSuccessful)
@@ -76,6 +80,18 @@ public class SceneSwitcher : MonoBehaviour
             case SceneType.COMBAT:
                 {
                     StartCoroutine(LoadCombat(playerArmy, enemyArmy));
+                    break;
+                }
+
+            case SceneType.VICTORY:
+                {
+                    StartCoroutine(LoadVictory());
+                    break;
+                }
+
+            case SceneType.DEFEAT:
+                {
+                    StartCoroutine(LoadDefeat());
                     break;
                 }
                 /*
@@ -172,4 +188,26 @@ public class SceneSwitcher : MonoBehaviour
         awaitingSceneLoading = false;
         Cursor.visible = true;
     }
+
+    IEnumerator LoadVictory()
+    {
+        AsyncOperation victoryLoading = SceneManager.LoadSceneAsync(victorySceneName, LoadSceneMode.Single);
+
+        yield return new WaitUntil(() => { return victoryLoading.isDone; });
+
+        awaitingSceneLoading = false;
+        Cursor.visible = true;
+    }
+
+    IEnumerator LoadDefeat()
+    {
+        AsyncOperation defeatLoading = SceneManager.LoadSceneAsync(defeatSceneName, LoadSceneMode.Single);
+
+        yield return new WaitUntil(() => { return defeatLoading.isDone; });
+
+        awaitingSceneLoading = false;
+        Cursor.visible = true;
+    }
+
+
 }
