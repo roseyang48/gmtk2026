@@ -14,10 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingName: Market
   buildingDescription: Produces 25 Gold per turn.
-  woodCost: 100
+  woodCost: 50
   goldCost: 0
   goldUpkeep: 0
   goldIncome: 25
   foodIncome: 0
   woodIncome: 0
   unitCapacityBonus: 0
+  isInfantryUnlocker: 0
+  isRangedUnlocker: 0
+  isCavalryUnlocker: 0

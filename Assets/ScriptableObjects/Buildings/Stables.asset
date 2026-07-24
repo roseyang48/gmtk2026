@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingName: Stables
   buildingDescription: Unlocks access to Cavalry.
-  woodCost: 250
-  goldCost: 300
+  woodCost: 125
+  goldCost: 150
   goldUpkeep: 20
   goldIncome: 0
   foodIncome: 0

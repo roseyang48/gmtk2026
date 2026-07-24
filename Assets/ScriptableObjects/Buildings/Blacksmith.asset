@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingName: Blacksmith
   buildingDescription: Unlocks access to Infantry.
-  woodCost: 200
-  goldCost: 200
+  woodCost: 100
+  goldCost: 100
   goldUpkeep: 15
   goldIncome: 0
   foodIncome: 0

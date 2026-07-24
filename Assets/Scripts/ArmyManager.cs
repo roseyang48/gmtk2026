@@ -23,18 +23,18 @@ public class ArmyManager : MonoBehaviour
 
     Dictionary<UnitType, int> buildCostGold = new Dictionary<UnitType, int>()
     {
-        {UnitType.PEASANT, 50},
-        {UnitType.INFANTRY, 100},
-        {UnitType.RANGED, 150},
-        {UnitType.CAVALRY, 200},
+        {UnitType.PEASANT, 25},
+        {UnitType.INFANTRY, 50},
+        {UnitType.RANGED, 75},
+        {UnitType.CAVALRY, 75},
     };
 
     Dictionary<UnitType, int> buildCostFood = new Dictionary<UnitType, int>()
     {
-        {UnitType.PEASANT, 100},
-        {UnitType.INFANTRY, 150},
-        {UnitType.RANGED, 100},
-        {UnitType.CAVALRY, 200},
+        {UnitType.PEASANT, 50},
+        {UnitType.INFANTRY, 75},
+        {UnitType.RANGED, 50},
+        {UnitType.CAVALRY, 75},
     };
 
     [SerializeField]
