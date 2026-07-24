@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ public class CombatHandler : MonoBehaviour
 {
     public static CombatHandler Instance;
     public enum Team {Player, Enemy}
+    private Army survivors = new Army();
     [SerializeField] private float spawnTime;
     [SerializeField] private GameObject peasantObject;
     [SerializeField] private GameObject archerObject;
@@ -15,6 +17,15 @@ public class CombatHandler : MonoBehaviour
     [SerializeField] private float enemySpawnPointY;
     [SerializeField] private Color playerHatColor;
     [SerializeField] private Color enemyHatColor;
+    private bool combatEnded = false;
+    [SerializeField] private TMP_Text titleText;
+    [SerializeField] private TMP_Text peasantCountText;
+    [SerializeField] private TMP_Text rangedCountText;
+    [SerializeField] private TMP_Text infantryCountText;
+    [SerializeField] private TMP_Text cavalryCountText;
+    [SerializeField] private Animator endMenuAnimator;
+    [SerializeField] private float vanishTime;
+    
     void Awake()
     {
         if (Instance != null)
@@ -31,7 +42,27 @@ public class CombatHandler : MonoBehaviour
         StartCoroutine("SpawnPlayerArmy", playerArmy);
         StartCoroutine("SpawnEnemyArmy", enemyArmy);
     }
-
+    public void AddSurvivor(ArmyManager.UnitType type)
+    {
+        switch(type)
+        {
+            case ArmyManager.UnitType.PEASANT:
+                survivors.peasantCount++;
+                break;
+            case ArmyManager.UnitType.INFANTRY:
+                survivors.infantryCount++;
+                break;
+            case ArmyManager.UnitType.RANGED:
+                survivors.rangedCount++;
+                break;
+            case ArmyManager.UnitType.CAVALRY:
+                survivors.cavalryCount++;
+                break;
+            default:
+                Debug.LogError("UNRECOGNIZED UNIT TYPE ADDED AS SURVIVOR");
+                break;
+        }
+    }
     private IEnumerator SpawnPlayerArmy(Army playerArmy)
     {
         float time = spawnTime / playerArmy.GetArmySize();
@@ -110,6 +141,48 @@ public class CombatHandler : MonoBehaviour
             obj.GetComponent<Unit>().Initialize(enemyHatColor, Team.Enemy);
             obj.tag = "EnemyUnit";
             yield return new WaitForSeconds(time);
+        }
+    }
+
+    public void EndCombat(Team winner, ArmyManager.UnitType type)
+    {
+        if(!combatEnded)
+        {
+            combatEnded = true;
+            switch(winner)
+            {
+                case Team.Player:
+                    titleText.text = "Count Conquered!";
+                    StartCoroutine("RemoveUnits", "PlayerUnit");
+                    break;
+                case Team.Enemy:
+                    titleText.text = "Down For The Count...";
+                    StartCoroutine("RemoveUnits", "EnemyUnit");
+                    break;
+                default:
+                    Debug.LogError("UNRECOGNIZED WINNER");
+                    break;
+            }
+            endMenuAnimator.SetTrigger("OpenMenu");
+
+        }
+        if(winner == Team.Player)
+        {
+            AddSurvivor(type);
+        }
+        peasantCountText.text = survivors.peasantCount.ToString();
+        infantryCountText.text = survivors.infantryCount.ToString();
+        rangedCountText.text = survivors.rangedCount.ToString();
+        cavalryCountText.text = survivors.cavalryCount.ToString();
+    }
+    private IEnumerator RemoveUnits(string team)
+    {
+        GameObject[] objects = GameObject.FindGameObjectsWithTag(team);
+        foreach(GameObject obj in objects)
+        {
+            Unit unit = obj.GetComponent<Unit>();
+            unit.Die();
+            yield return new WaitForSeconds(vanishTime/objects.Length);
         }
     }
 }

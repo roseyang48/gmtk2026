@@ -15,14 +15,14 @@ public class FleePointScript : MonoBehaviour
                     case CombatHandler.Team.Player:
                         if(collision.gameObject.tag == "PlayerUnit")
                         {
-                            //MAKE SURE TO DO THE THING THAT INCREMENTS SURVIVORS :D
+                            CombatHandler.Instance.AddSurvivor(collisionUnit.GetUnitType());
                             Destroy(collision.gameObject);
                         }
                         break;
                     case CombatHandler.Team.Enemy:
                         if(collision.gameObject.tag == "EnemyUnit")
                         {
-                            //DO IT HERE TOO :3
+                            //NO ENEMY SURVIVORS
                             Destroy(collision.gameObject);
                         }
                         break;

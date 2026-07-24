@@ -42,6 +42,7 @@ public class ChaseState : UnitState
         else
         {
             unit.SetTarget(null);
+            unit.StateMachine.ChangeState(unit.IdleState);
         }
     }
 }

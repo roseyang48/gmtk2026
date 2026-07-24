@@ -15,7 +15,7 @@ MonoBehaviour:
   maxHP: 16
   attackInterval: 0.4
   attackDamage: 1
-  attackRange: 1
+  attackRange: 1.2
   moveSpeed: 4
   rotationSpeed: 8
   fleeThreshhold: 0.3

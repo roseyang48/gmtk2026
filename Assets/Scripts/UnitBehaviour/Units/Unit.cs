@@ -55,6 +55,11 @@ public class Unit : MonoBehaviour
         unitTeam = team;
         hatSprite.color = hatColor;
     }
+    public virtual ArmyManager.UnitType GetUnitType()
+    {
+        Debug.Log("UNIT LACKS TYPE");
+        return ArmyManager.UnitType.PEASANT;
+    }
     public virtual void Update()
     {
         if(currHP/statBlock.maxHP <= statBlock.fleeThreshhold && StateMachine.currState != FleeState && !hasFled)
@@ -151,6 +156,7 @@ public class Unit : MonoBehaviour
     private IEnumerator EnableAgent()
     {
         yield return new WaitUntil(()=> obstacle.enabled == false);
+        yield return new WaitForEndOfFrame();
         agent.enabled = true;
     }
     

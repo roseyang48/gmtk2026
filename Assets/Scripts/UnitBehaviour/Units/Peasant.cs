@@ -6,4 +6,8 @@ public class Peasant : Unit
     {
         animator.Play("PeasantAttack");
     }
+    public override ArmyManager.UnitType GetUnitType()
+    {
+        return ArmyManager.UnitType.PEASANT;
+    }
 }

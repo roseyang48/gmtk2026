@@ -42,6 +42,10 @@ public class Cavalry : Unit
             chargeTrailRenderer.emitting = false;
         }
     }
+    public override ArmyManager.UnitType GetUnitType()
+    {
+        return ArmyManager.UnitType.CAVALRY;
+    }
     public override void OnHitEnemy(Unit target)
     {
         if(!isCharging)

@@ -7,6 +7,10 @@ public class Archer : Unit
     {
         animator.Play("ArcherAttack");
     }
+    public override ArmyManager.UnitType GetUnitType()
+    {
+        return ArmyManager.UnitType.RANGED;
+    }
     public override void OnHitEnemy(Unit target)
     {
         Vector2 targetPos = target.transform.position;

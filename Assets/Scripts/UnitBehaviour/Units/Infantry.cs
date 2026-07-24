@@ -6,4 +6,8 @@ public class Infantry : Unit
     {
         animator.Play("InfantryAttack");
     }
+    public override ArmyManager.UnitType GetUnitType()
+    {
+        return ArmyManager.UnitType.INFANTRY;
+    }
 }

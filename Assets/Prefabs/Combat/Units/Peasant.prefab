@@ -152,7 +152,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0.03, y: 0}
-  m_Radius: 0.62
+  m_Radius: 0.5
 --- !u!95 &7373302692574883019
 Animator:
   serializedVersion: 7
@@ -184,7 +184,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 3536834863326305583}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.4
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -207,7 +207,7 @@ NavMeshObstacle:
   m_Enabled: 0
   serializedVersion: 3
   m_Shape: 0
-  m_Extents: {x: 0.6, y: 0.00001, z: 0.6}
+  m_Extents: {x: 0.4, y: 0.00001, z: 0.4}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
