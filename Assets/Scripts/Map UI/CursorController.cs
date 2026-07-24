@@ -58,6 +58,7 @@ public class CursorController : MonoBehaviour
                         if (hits[i].collider.GetComponent<RegionController>() != null)
                         {
                             GameManager.Instance.RegionSelected(hits[i].collider.GetComponent<RegionController>().GetRegionNumber());
+                            hits[i].collider.GetComponent<RegionController>().RegionSelected();
                             break;
                         }
                         else if (hits[i].collider.CompareTag("CancelCollider"))

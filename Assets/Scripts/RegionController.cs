@@ -27,4 +27,9 @@ public class RegionController : MonoBehaviour
     {
         return regionNumber;
     }
+
+    public void RegionSelected()
+    {
+        
+    }
 }
