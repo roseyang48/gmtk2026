@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     Building[] buildingOptions;
 
+    [SerializeField] DialogueObject tutorialDialogue;
+
     int targetRegion = -1;
 
     int turnCount = 1;
@@ -36,7 +38,11 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        if(PlayerPrefs.GetInt("TutorialSeen") == 1)
+        {
+            DialogueHandler.instance.TriggerDialogue(tutorialDialogue);
+            PlayerPrefs.SetInt("TutorialSeen", 1);
+        }
     }
 
     // Update is called once per frame

@@ -31,11 +31,6 @@ public class SceneSwitcher : MonoBehaviour
 
     bool awaitingSceneLoading = false;
 
-    //TODO UNTIL WE FIGURE SOMETHING BETTER
-    bool pauseOpen = false;
-    bool cursorState = true;
-    float currentTimeScale = 1;
-
     public enum SceneType
     {
         MAIN_MENU,
