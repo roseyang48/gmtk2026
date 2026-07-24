@@ -85,4 +85,20 @@ public class Building : ScriptableObject
     {
         return isInfantryUnlocker;
     }
+
+    [SerializeField]
+    bool isRangedUnlocker;
+
+    public bool IsRangedUnlocker()
+    {
+        return isRangedUnlocker;
+    }
+
+    [SerializeField]
+    bool isCavalryUnlocker;
+
+    public bool IsCavalryUnlocker()
+    {
+        return isCavalryUnlocker;
+    }
 }
