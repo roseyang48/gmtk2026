@@ -65,6 +65,7 @@ public class UnitBuildController : MonoBehaviour
 
     [SerializeField]
     TextMeshProUGUI cavalryBuildTextSecondary;
+
     private InputAction closeAction;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -72,7 +73,7 @@ public class UnitBuildController : MonoBehaviour
     {
         HideCanvas();
         closeAction = InputSystem.actions.FindAction("Pause");
-        closeAction.performed += context => {HideCanvas();};
+        closeAction.performed += context => { HideCanvas(); };
     }
 
     // Update is called once per frame
