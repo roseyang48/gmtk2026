@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZoneButtonController
   regionNumber: -1
+  selectSFX: {fileID: 8300000, guid: 1297e0efc6434e64b96b70ebd4b79497, type: 3}
 --- !u!61 &5307942464064067708
 BoxCollider2D:
   m_ObjectHideFlags: 0

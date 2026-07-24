@@ -4,6 +4,7 @@ public class RegionController : MonoBehaviour
 {
     [SerializeField]
     int regionNumber = -1;
+    [SerializeField] AudioClip selectSFX;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,6 +31,6 @@ public class RegionController : MonoBehaviour
 
     public void RegionSelected()
     {
-        
+        AudioManager.Instance.PlaySFX(selectSFX, transform, 1f);
     }
 }
