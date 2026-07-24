@@ -21,3 +21,6 @@ MonoBehaviour:
   foodIncome: 0
   woodIncome: 0
   unitCapacityBonus: 0
+  isInfantryUnlocker: 1
+  isRangedUnlocker: 0
+  isCavalryUnlocker: 0

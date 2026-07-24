@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48400fffd5bd1485d95031a395622e68, type: 3}
+  m_Name: Region1
+  m_EditorClassIdentifier: Assembly-CSharp::RegionInitializer
+  regionNumber: 1
+  regionName: Foret-sur-Mer
+  isRegionOccupied: 1
+  hasViscount: 0
+  regionIncome: 15
+  buildingSlots: 2
+  regionArmy:
+    peasantCount: 2
+    infantryCount: 1
+    rangedCount: 0
+    cavalryCount: 0
+  neighborRegions: 000000000200000005000000

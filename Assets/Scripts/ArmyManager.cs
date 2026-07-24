@@ -131,7 +131,7 @@ public class ArmyManager : MonoBehaviour
         {
             if (buildings[i] != null)
             {
-                bonusUnitCapacity = buildings[i].GetUnitCapacityBonus();
+                bonusUnitCapacity += buildings[i].GetUnitCapacityBonus();
             }
         }
 
@@ -185,5 +185,56 @@ public class ArmyManager : MonoBehaviour
         }
 
         return false;
+    }
+
+    public Army GetArmy()
+    {
+        return army;
+    }
+
+    public void SetSurvivingUnits(UnitType unitType, int amount)
+    {
+        switch (unitType)
+        {
+            case UnitType.PEASANT:
+                army.peasantCount += amount;
+                break;
+            case UnitType.INFANTRY:
+                army.infantryCount += amount;
+                break;
+            case UnitType.RANGED:
+                army.rangedCount += amount;
+                break;
+            case UnitType.CAVALRY:
+                army.cavalryCount += amount;
+                break;
+            default:
+                Debug.LogError("Invalid Unit Type");
+                Debug.Break();
+                break;
+        }
+    }
+
+    public void DispatchUnits(UnitType unitType, int amount)
+    {
+        switch (unitType)
+        {
+            case UnitType.PEASANT:
+                army.peasantCount -= amount;
+                break;
+            case UnitType.INFANTRY:
+                army.infantryCount -= amount;
+                break;
+            case UnitType.RANGED:
+                army.rangedCount -= amount;
+                break;
+            case UnitType.CAVALRY:
+                army.cavalryCount -= amount;
+                break;
+            default:
+                Debug.LogError("Invalid Unit Type");
+                Debug.Break();
+                break;
+        }
     }
 }

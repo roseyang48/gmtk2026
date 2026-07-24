@@ -116,7 +116,7 @@ public class UnitBuildController : MonoBehaviour
         }
         else
         {
-            rangedBuildTextMain.text = "Requires Bowyer";
+            rangedBuildTextMain.text = "Requires Gunsmith";
         }
         rangedBuildTextSecondary.text = ArmyManager.Instance.GetGoldBuildCost(ArmyManager.UnitType.RANGED) + " Gold, " + ArmyManager.Instance.GetFoodBuildCost(ArmyManager.UnitType.RANGED) + " Food";
 
