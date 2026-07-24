@@ -58,6 +58,12 @@ public class RegionUIController : MonoBehaviour
     TextMeshProUGUI assaultButtonText;
 
 
+    [SerializeField]
+    TextMeshProUGUI regionGoldText;
+
+    [SerializeField]
+    TextMeshProUGUI regionFoodText;
+
     int activeBuildingSlot;
     Building selectedBuilding;
 
@@ -128,6 +134,9 @@ public class RegionUIController : MonoBehaviour
         {
             assaultButton.gameObject.SetActive(false);
         }
+
+        regionGoldText.text = "G: " + region.GetRegionIncome();
+        regionFoodText.text = "F: " + region.GetRegionFood();
 
         activeRegion = region;
 

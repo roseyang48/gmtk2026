@@ -50,6 +50,7 @@ public class CursorController : MonoBehaviour
             if (!uiCollision)
             {
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.zero);
+
                 if (hit.collider != null)
                 {
                     if (hit.collider.GetComponent<RegionController>() != null)
