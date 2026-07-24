@@ -49,17 +49,21 @@ public class CursorController : MonoBehaviour
 
             if (!uiCollision)
             {
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.zero);
+                RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, Vector2.zero);
 
-                if (hit.collider != null)
+                for (int i = 0; i < hits.Length; i++)
                 {
-                    if (hit.collider.GetComponent<RegionController>() != null)
+                    if (hits[i].collider != null)
                     {
-                        GameManager.Instance.RegionSelected(hit.collider.GetComponent<RegionController>().GetRegionNumber());
-                    }
-                    else if (hit.collider.CompareTag("CancelCollider"))
-                    {
-                        GameManager.Instance.CancelAction();
+                        if (hits[i].collider.GetComponent<RegionController>() != null)
+                        {
+                            GameManager.Instance.RegionSelected(hits[i].collider.GetComponent<RegionController>().GetRegionNumber());
+                            break;
+                        }
+                        else if (hits[i].collider.CompareTag("CancelCollider"))
+                        {
+                            GameManager.Instance.CancelAction();
+                        }
                     }
                 }
             }
