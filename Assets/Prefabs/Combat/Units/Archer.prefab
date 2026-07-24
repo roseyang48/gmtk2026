@@ -369,6 +369,10 @@ MonoBehaviour:
   obstacle: {fileID: 2445278793913882307}
   hatSprite: {fileID: 3739095341252197836}
   arrow: {fileID: 8687935717450274089, guid: b589edc9a05c43c4aa77938986a5baa0, type: 3}
+  attackAudio:
+  - {fileID: 8300000, guid: d35bd125646b7614cb5e482627ed59dd, type: 3}
+  - {fileID: 8300000, guid: 358f555c7cfa8ee41864e3e0613561d3, type: 3}
+  - {fileID: 8300000, guid: 6bdd465b73891f847abf30a4605c318b, type: 3}
 --- !u!50 &4579188026456137727
 Rigidbody2D:
   serializedVersion: 5
