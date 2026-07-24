@@ -10,10 +10,9 @@ public class GameManager : MonoBehaviour
     UnitBuildController unitBuildController;
 
     [SerializeField]
-    RegionController[] regions;
-
-    [SerializeField]
     Building[] buildingOptions;
+
+    int targetRegion = -1;
 
     int turnCount = 1;
 
@@ -46,7 +45,7 @@ public class GameManager : MonoBehaviour
 
     public void RegionSelected(int regionNumber)
     {
-        regionUIController.ShowCanvas(regions[regionNumber]);
+        regionUIController.ShowCanvas(RegionManager.Instance.GetRegion(regionNumber));
         unitBuildController.HideCanvas();
     }
 
@@ -88,6 +87,8 @@ public class GameManager : MonoBehaviour
     {
         List<Building> buildings = new List<Building>();
 
+        Region[] regions = RegionManager.Instance.GetAllRegions();
+
         for (int i = 0; i < regions.Length; i++)
         {
             if (!regions[i].IsRegionOccupied() || includeOccupied)
@@ -112,9 +113,11 @@ public class GameManager : MonoBehaviour
 
         int foodIncome = 0;
 
+        Region[] regions = RegionManager.Instance.GetAllRegions();
+
         for (int i = 0; i < regions.Length; i++)
         {
-            RegionController currentRegion = regions[i];
+            Region currentRegion = regions[i];
             if (!currentRegion.IsRegionOccupied())
             {
                 goldIncome += currentRegion.GetRegionIncome();
@@ -174,5 +177,41 @@ public class GameManager : MonoBehaviour
         {
             ResourceManager.Instance.SpendResource(ResourceManager.ResourceType.WOOD, upkeep[2] * -1);
         }
+    }
+
+    public void BeginAssault(int regionNumber)
+    {
+        targetRegion = regionNumber;
+
+        Army dispatchArmy = new Army
+        {
+            peasantCount = ArmyManager.Instance.GetUnitCount(ArmyManager.UnitType.PEASANT),
+            infantryCount = ArmyManager.Instance.GetUnitCount(ArmyManager.UnitType.INFANTRY),
+            rangedCount = ArmyManager.Instance.GetUnitCount(ArmyManager.UnitType.RANGED),
+            cavalryCount = ArmyManager.Instance.GetUnitCount(ArmyManager.UnitType.CAVALRY)
+        };
+
+        ArmyManager.Instance.DispatchUnits(ArmyManager.UnitType.PEASANT, ArmyManager.Instance.GetUnitCount(ArmyManager.UnitType.PEASANT));
+        ArmyManager.Instance.DispatchUnits(ArmyManager.UnitType.INFANTRY, ArmyManager.Instance.GetUnitCount(ArmyManager.UnitType.INFANTRY));
+        ArmyManager.Instance.DispatchUnits(ArmyManager.UnitType.RANGED, ArmyManager.Instance.GetUnitCount(ArmyManager.UnitType.RANGED));
+        ArmyManager.Instance.DispatchUnits(ArmyManager.UnitType.CAVALRY, ArmyManager.Instance.GetUnitCount(ArmyManager.UnitType.CAVALRY));
+
+        SceneSwitcher.Instance.LoadScene(SceneSwitcher.SceneType.COMBAT, dispatchArmy, RegionManager.Instance.GetRegion(regionNumber).GetRegionArmy());
+    }
+
+    public void ConcludeAssault(bool wasSuccessful)
+    {
+        if (wasSuccessful)
+        {
+            RegionManager.Instance.GetRegion(targetRegion).ChangeRegionStatus(false);
+        }
+
+        targetRegion = -1;
+    }
+
+    public void UpdateUIReferences()
+    {
+        regionUIController = GameObject.Find("RegionUICanvas").GetComponent<RegionUIController>();
+        unitBuildController = GameObject.Find("UnitBuildCanvas").GetComponent<UnitBuildController>();
     }
 }

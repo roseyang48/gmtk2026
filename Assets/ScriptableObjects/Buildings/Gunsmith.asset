@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfd51f399e839416ab6de21600af4c19, type: 3}
-  m_Name: Bowyer
+  m_Name: Gunsmith
   m_EditorClassIdentifier: Assembly-CSharp::Building
-  buildingName: Bowyer
-  buildingDescription: Unlocks access to Ranged.
+  buildingName: Gunsmith
+  buildingDescription: Unlocks access to Musketeers.
   woodCost: 250
   goldCost: 150
   goldUpkeep: 10
@@ -21,3 +21,6 @@ MonoBehaviour:
   foodIncome: 0
   woodIncome: 0
   unitCapacityBonus: 0
+  isInfantryUnlocker: 0
+  isRangedUnlocker: 1
+  isCavalryUnlocker: 0

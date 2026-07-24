@@ -26,6 +26,8 @@ public class CombatHandler : MonoBehaviour
     [SerializeField] private Animator endMenuAnimator;
     [SerializeField] private float vanishTime;
     
+    bool playerWon = false;
+
     void Awake()
     {
         if (Instance != null)
@@ -154,6 +156,7 @@ public class CombatHandler : MonoBehaviour
                 case Team.Player:
                     titleText.text = "Count Conquered!";
                     StartCoroutine("RemoveUnits", "PlayerUnit");
+                    playerWon = true;
                     break;
                 case Team.Enemy:
                     titleText.text = "Down For The Count...";
@@ -181,9 +184,22 @@ public class CombatHandler : MonoBehaviour
         GameObject[] objects = GameObject.FindGameObjectsWithTag(team);
         foreach(GameObject obj in objects)
         {
-            Unit unit = obj.GetComponent<Unit>();
-            unit.Die();
+            if (obj != null)
+            {
+                Unit unit = obj.GetComponent<Unit>();
+                unit.Die();
+            }
             yield return new WaitForSeconds(vanishTime/objects.Length);
         }
+    }
+
+    public void ReturnToMap()
+    {
+        ArmyManager.Instance.SetSurvivingUnits(ArmyManager.UnitType.PEASANT, survivors.peasantCount);
+        ArmyManager.Instance.SetSurvivingUnits(ArmyManager.UnitType.INFANTRY, survivors.infantryCount);
+        ArmyManager.Instance.SetSurvivingUnits(ArmyManager.UnitType.RANGED, survivors.rangedCount);
+        ArmyManager.Instance.SetSurvivingUnits(ArmyManager.UnitType.CAVALRY, survivors.cavalryCount);
+
+        SceneSwitcher.Instance.LoadScene(SceneSwitcher.SceneType.MAP_POST, playerWon);
     }
 }
