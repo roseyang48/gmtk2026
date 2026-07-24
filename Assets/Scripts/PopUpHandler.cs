@@ -20,5 +20,6 @@ public class PopUpHandler : MonoBehaviour
     public void SpawnPopup(string text, Vector2 position)
     {
         GameObject popUp = Instantiate(popUpObj, position, Quaternion.identity);
+        popUp.GetComponent<PopUp>().Initialize(text);
     }
 }
