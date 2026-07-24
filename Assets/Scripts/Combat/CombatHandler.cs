@@ -177,6 +177,7 @@ public class CombatHandler : MonoBehaviour
     }
     private IEnumerator RemoveUnits(string team)
     {
+        yield return new WaitForEndOfFrame();
         GameObject[] objects = GameObject.FindGameObjectsWithTag(team);
         foreach(GameObject obj in objects)
         {
