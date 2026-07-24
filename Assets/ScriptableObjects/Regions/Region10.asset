@@ -15,8 +15,8 @@ MonoBehaviour:
   regionNumber: 10
   regionName: Candes-sur-Bouleau
   isRegionOccupied: 1
-  hasViscount: 0
-  regionIncome: 15
+  regionIncome: 10
+  regionFood: 15
   buildingSlots: 2
   regionArmy:
     peasantCount: 4

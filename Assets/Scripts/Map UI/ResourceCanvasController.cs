@@ -52,9 +52,9 @@ public class ResourceCanvasController : MonoBehaviour
 
         int[] buildingUpkeep = GameManager.Instance.ComputeUpkeep();
 
-        goldTrendCounter.text = (buildingUpkeep[0] > 0 ? "+" : "") + buildingUpkeep[0].ToString();
-        foodTrendCounter.text = (buildingUpkeep[1] > 0 ? "+" : "") + buildingUpkeep[1].ToString();
-        woodTrendCounter.text = (buildingUpkeep[2] > 0 ? "+" : "") + buildingUpkeep[2].ToString();
+        goldTrendCounter.text = "(" + (buildingUpkeep[0] > 0 ? "+" : "") + buildingUpkeep[0].ToString() + ")";
+        foodTrendCounter.text = "(" + (buildingUpkeep[1] > 0 ? "+" : "") + buildingUpkeep[1].ToString() + ")";
+        woodTrendCounter.text = "(" + (buildingUpkeep[2] > 0 ? "+" : "") + buildingUpkeep[2].ToString() + ")";
 
         unitCapacityCounter.text = ArmyManager.Instance.GetUnitCount() + "/" + ArmyManager.Instance.GetUnitCapacity();
 

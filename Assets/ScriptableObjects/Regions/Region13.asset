@@ -15,8 +15,8 @@ MonoBehaviour:
   regionNumber: 13
   regionName: Marcheac
   isRegionOccupied: 1
-  hasViscount: 0
-  regionIncome: 15
+  regionIncome: 10
+  regionFood: 15
   buildingSlots: 2
   regionArmy:
     peasantCount: 6

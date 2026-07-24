@@ -123,6 +123,7 @@ public class GameManager : MonoBehaviour
             if (!currentRegion.IsRegionOccupied())
             {
                 goldIncome += currentRegion.GetRegionIncome();
+                foodIncome += currentRegion.GetRegionFood();
 
                 for (int j = 0; j < currentRegion.GetBuildingSlots(); j++)
                 {
@@ -197,14 +198,31 @@ public class GameManager : MonoBehaviour
 
         if (!stillOccupied)
         {
-            SceneSwitcher.Instance.LoadScene(SceneSwitcher.SceneType.VICTORY);
+            SceneSwitcher.Instance.LoadScene(SceneSwitcher.SceneType.VICTORY, turnCount - 1);
+            Destroy(gameObject);
         }
 
         // Check for loss
         if (ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.GOLD) < 0
             || ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.FOOD) < 0)
         {
-            SceneSwitcher.Instance.LoadScene(SceneSwitcher.SceneType.DEFEAT);
+            string cause;
+
+            if (ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.GOLD) < 0 && ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.FOOD) < 0)
+            {
+                cause = "You ran out of food and gold.";
+            }
+            else if (ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.FOOD) < 0)
+            {
+                cause = "You ran out of food.";
+            }
+            else
+            {
+                cause = "You ran out of gold.";
+            }
+
+            SceneSwitcher.Instance.LoadScene(SceneSwitcher.SceneType.DEFEAT, cause);
+            Destroy(gameObject);
         }
 
         hasAttacked = false;

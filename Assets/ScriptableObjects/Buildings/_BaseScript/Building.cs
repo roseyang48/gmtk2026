@@ -18,7 +18,7 @@ public class Building : ScriptableObject
 
     public string GetBuildingDescription()
     {
-        return buildingDescription;
+        return buildingDescription + "\nUpkeep: " + goldUpkeep + " Gold";
     }
 
     [SerializeField]
