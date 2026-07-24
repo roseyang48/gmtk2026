@@ -46,7 +46,7 @@ public class ArmyManager : MonoBehaviour
     {
         if (Instance != null)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
         else
         {

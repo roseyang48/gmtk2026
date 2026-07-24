@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     int turnCount = 1;
 
     bool hasAttacked = false;
+    public bool onUnitScreen;
 
     public static GameManager Instance;
 
@@ -26,7 +27,7 @@ public class GameManager : MonoBehaviour
     {
         if (Instance != null)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
         else
         {

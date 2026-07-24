@@ -30,7 +30,7 @@ public class AudioManager : MonoBehaviour
             source.Play();
             SFXGroup.Add(source);
             StartCoroutine(RemoveSource(source.clip.length, source));
-            Destroy(source.gameObject, source.clip.length);
+            Destroy(source.gameObject, source.clip.length + 0.1f);
         }
     }
     public void PlayRandomSFX(AudioClip[] audioClip, Transform spawnTransform, float volume)
@@ -43,7 +43,7 @@ public class AudioManager : MonoBehaviour
             source.Play();
             SFXGroup.Add(source);
             StartCoroutine(RemoveSource(source.clip.length, source));
-            Destroy(source.gameObject, source.clip.length);
+            Destroy(source.gameObject, source.clip.length + 0.1f);
         }
     }
     public void PlayMusic(AudioClip audioClip, Transform spawnTransform, float volume)
