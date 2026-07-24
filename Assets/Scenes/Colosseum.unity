@@ -794,10 +794,10 @@ MonoBehaviour:
     rangedCount: 5
     cavalryCount: 5
   testEnemyArmy:
-    peasantCount: 5
-    infantryCount: 5
-    rangedCount: 5
-    cavalryCount: 5
+    peasantCount: 1
+    infantryCount: 0
+    rangedCount: 0
+    cavalryCount: 0
 --- !u!4 &573268403
 Transform:
   m_ObjectHideFlags: 0
