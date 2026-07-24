@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -158,6 +159,50 @@ public class GameManager : MonoBehaviour
         return new int[]{goldIncome, foodIncome, woodIncome};
     }
 
+    public void RegionIncomePopups()
+    {
+        Region[] regions = RegionManager.Instance.GetAllRegions();
+        for(int i = 0; i < regions.Length; i++)
+        {
+            Region currRegion = regions[i];
+            if(!currRegion.IsRegionOccupied())
+            {
+                int totalGold = currRegion.GetRegionIncome();
+                int totalFood = currRegion.GetRegionFood();
+                int totalWood = 0;
+                foreach(Building currBuilding in currRegion.GetConstructedBuildings())
+                {
+                    if(currBuilding != null)
+                    {
+                        totalGold += currBuilding.GetGoldIncome();
+                        totalFood += currBuilding.GetFoodIncome();
+                        totalWood += currBuilding.GetWoodIncome();
+                    }
+                }
+                StartCoroutine(SpawnSequentialPopups(totalGold, totalFood, totalWood, i));
+            }
+        }
+    }
+
+    private IEnumerator SpawnSequentialPopups(int gold, int food, int wood, int regionNumber)
+    {
+        if(gold > 0)
+        {
+            PopUpHandler.Instance.SpawnPopup("+" + gold + " Gold!", GetRegionTransform(regionNumber).position);
+            yield return new WaitForSeconds(0.5f);
+        }
+        if(food > 0)
+        {
+            PopUpHandler.Instance.SpawnPopup("+" + food + " Food!", GetRegionTransform(regionNumber).position);
+            yield return new WaitForSeconds(0.5f);
+        }
+        if(wood > 0)
+        {
+            PopUpHandler.Instance.SpawnPopup("+" + wood + " Wood!", GetRegionTransform(regionNumber).position);
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
+
     public void AdvanceTurn()
     {
         unitBuildController.HideCanvas();
@@ -166,7 +211,7 @@ public class GameManager : MonoBehaviour
         turnCount += 1;
 
         int[] upkeep = ComputeUpkeep();
-
+        RegionIncomePopups();
         if (upkeep[0] > 0)
         {
             ResourceManager.Instance.GainResource(ResourceManager.ResourceType.GOLD, upkeep[0]);
@@ -265,8 +310,8 @@ public class GameManager : MonoBehaviour
         if (wasSuccessful)
         {
             RegionManager.Instance.GetRegion(targetRegion).ChangeRegionStatus(false);
+            PopUpHandler.Instance.SpawnPopup("Count Down!", GetRegionTransform(targetRegion).position);
         }
-
         targetRegion = -1;
     }
 
