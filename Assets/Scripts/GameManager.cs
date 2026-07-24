@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if(PlayerPrefs.GetInt("TutorialSeen") == 1)
+        if(PlayerPrefs.GetInt("TutorialSeen") != 1)
         {
             DialogueHandler.instance.TriggerDialogue(tutorialDialogue);
             PlayerPrefs.SetInt("TutorialSeen", 1);
