@@ -58,7 +58,6 @@ public class RegionUIController : MonoBehaviour
     void Start()
     {
         HideCanvas();
-        HideBuildMenu();
     }
 
     // Update is called once per frame

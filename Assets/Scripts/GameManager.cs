@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
     RegionUIController regionUIController;
 
     [SerializeField]
+    UnitBuildController unitBuildController;
+
+    [SerializeField]
     RegionController[] regions;
 
     [SerializeField]
@@ -44,6 +47,13 @@ public class GameManager : MonoBehaviour
     public void RegionSelected(int regionNumber)
     {
         regionUIController.ShowCanvas(regions[regionNumber]);
+        unitBuildController.HideCanvas();
+    }
+
+    public void UnitUpgradeSelected()
+    {
+        unitBuildController.ShowCanvas();
+        regionUIController.HideCanvas();
     }
 
     public void BuildingSelected(int buildingSlot)
@@ -56,6 +66,13 @@ public class GameManager : MonoBehaviour
         regionUIController.DrawBuildingInfo(buildingOption);
     }
 
+    public void BuildUnit(ArmyManager.UnitType unitType)
+    {
+        ArmyManager.Instance.BuildNewUnit(unitType);
+        ResourceManager.Instance.SpendResource(ResourceManager.ResourceType.GOLD, ArmyManager.Instance.GetGoldBuildCost(unitType));
+        ResourceManager.Instance.SpendResource(ResourceManager.ResourceType.FOOD, ArmyManager.Instance.GetFoodBuildCost(unitType));
+    }
+
     public Building[] GetBuildingOptions()
     {
         return buildingOptions;
@@ -64,15 +81,19 @@ public class GameManager : MonoBehaviour
     public void CancelAction()
     {
         regionUIController.HideCanvas();
+        unitBuildController.HideCanvas();
     }
 
-    public Building[] GetConstructedBuildings()
+    public Building[] GetConstructedBuildings(bool includeOccupied)
     {
         List<Building> buildings = new List<Building>();
 
         for (int i = 0; i < regions.Length; i++)
         {
-            buildings.AddRange(regions[i].GetConstructedBuildings());
+            if (!regions[i].IsRegionOccupied() || includeOccupied)
+            {
+                buildings.AddRange(regions[i].GetConstructedBuildings());
+            }
         }
 
         return buildings.ToArray();

@@ -21,6 +21,22 @@ public class ArmyManager : MonoBehaviour
         {UnitType.CAVALRY, 4},
     };
 
+    Dictionary<UnitType, int> buildCostGold = new Dictionary<UnitType, int>()
+    {
+        {UnitType.PEASANT, 50},
+        {UnitType.INFANTRY, 100},
+        {UnitType.RANGED, 150},
+        {UnitType.CAVALRY, 200},
+    };
+
+    Dictionary<UnitType, int> buildCostFood = new Dictionary<UnitType, int>()
+    {
+        {UnitType.PEASANT, 100},
+        {UnitType.INFANTRY, 150},
+        {UnitType.RANGED, 100},
+        {UnitType.CAVALRY, 200},
+    };
+
     [SerializeField]
     Army army;
 
@@ -110,7 +126,7 @@ public class ArmyManager : MonoBehaviour
     {
         int bonusUnitCapacity = 0;
 
-        Building[] buildings = GameManager.Instance.GetConstructedBuildings();
+        Building[] buildings = GameManager.Instance.GetConstructedBuildings(false);
         for (int i = 0; i < buildings.Length; i++)
         {
             if (buildings[i] != null)
@@ -130,5 +146,44 @@ public class ArmyManager : MonoBehaviour
     public int GetFoodUpkeep(UnitType unitType)
     {
         return foodUpkeep[unitType] * GetUnitCount(unitType);
+    }
+
+    public int GetGoldBuildCost(UnitType unitType)
+    {
+        return buildCostGold[unitType];
+    }
+
+    public int GetFoodBuildCost(UnitType unitType)
+    {
+        return buildCostFood[unitType];
+    }
+
+    public bool CanBuildUnitType(UnitType unitType)
+    {
+        if (unitType == UnitType.PEASANT) { return true; }
+
+        Building[] buildings = GameManager.Instance.GetConstructedBuildings(false);
+        for (int i = 0; i < buildings.Length; i++)
+        {
+            if (buildings[i] != null)
+            {
+                switch (unitType)
+                {
+                    case UnitType.PEASANT:
+                        return true;
+                    case UnitType.INFANTRY:
+                        if (buildings[i].IsInfantryUnlocker()) { return true; }
+                        break;
+                    case UnitType.RANGED:
+                        if (buildings[i].IsRangedUnlocker()) { return true; }
+                        break;
+                    case UnitType.CAVALRY:
+                        if (buildings[i].IsCavalryUnlocker()) { return true; }
+                        break;
+                }
+            }
+        }
+
+        return false;
     }
 }
