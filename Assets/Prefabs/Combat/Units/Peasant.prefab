@@ -90,6 +90,13 @@ MonoBehaviour:
   agent: {fileID: 7188495503304418538}
   obstacle: {fileID: 1189676305979842467}
   hatSprite: {fileID: 2182720305301416907}
+  attackAudio:
+  - {fileID: 8300000, guid: f1a21566a238f894f9af3f861fa0689d, type: 3}
+  - {fileID: 8300000, guid: dfdea8d6ef602a042afa3c878259d6bb, type: 3}
+  - {fileID: 8300000, guid: c8c0b8adef7b4e843851a4323f99cbd5, type: 3}
+  - {fileID: 8300000, guid: d86c744082c0e9f4f8cda9378e3d815a, type: 3}
+  - {fileID: 8300000, guid: 5d4759444da54924e98822aac996dd62, type: 3}
+  - {fileID: 8300000, guid: 7e7846deb4ba5524ea63dc1d51e66f43, type: 3}
 --- !u!50 &1589072275236235595
 Rigidbody2D:
   serializedVersion: 5

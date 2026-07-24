@@ -10,6 +10,7 @@ public class Cavalry : Unit
     [SerializeField] private float minSpeed;
     private bool isCharging = false;
     private float timer = 0f;
+    [SerializeField] AudioClip[] attackAudio;
     public override void Attack()
     {
         if(!isCharging)
@@ -48,6 +49,7 @@ public class Cavalry : Unit
     }
     public override void OnHitEnemy(Unit target)
     {
+        AudioManager.Instance.PlayRandomSFX(attackAudio, transform, 0.4f);
         if(!isCharging)
         {
             base.OnHitEnemy(target);
