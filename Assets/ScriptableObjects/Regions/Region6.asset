@@ -19,7 +19,7 @@ MonoBehaviour:
   regionIncome: 15
   buildingSlots: 2
   regionArmy:
-    peasantCount: 0
+    peasantCount: 12
     infantryCount: 0
     rangedCount: 0
     cavalryCount: 0
