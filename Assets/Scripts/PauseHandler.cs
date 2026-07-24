@@ -16,20 +16,23 @@ public class PauseHandler : MonoBehaviour
 
     public void Pause()
     {
-        if(isOptions)
+        if(!GameManager.Instance.onUnitScreen)
         {
-            pauseScreenAnimator.SetTrigger("CloseOptions");
-            isOptions = false;
-        }
-        else if(isPaused)
-        {
-            pauseScreenAnimator.SetTrigger("UnpauseGame");
-            isPaused = !isPaused;
-        }
-        else
-        {
-            pauseScreenAnimator.SetTrigger("PauseGame");
-            isPaused = !isPaused;
+            if(isOptions)
+            {
+                pauseScreenAnimator.SetTrigger("CloseOptions");
+                isOptions = false;
+            }
+            else if(isPaused)
+            {
+                pauseScreenAnimator.SetTrigger("UnpauseGame");
+                isPaused = !isPaused;
+            }
+            else
+            {
+                pauseScreenAnimator.SetTrigger("PauseGame");
+                isPaused = !isPaused;
+            }
         }
     }
 

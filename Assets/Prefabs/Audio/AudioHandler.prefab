@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   sfxObject: {fileID: 7452786752941089340, guid: 2e7a155195bd637499f7534604b16fc1, type: 3}
   musicObject: {fileID: 7452786752941089340, guid: 684b8f4ef6b97dd4bb6571fa32b0ef2c, type: 3}
+  maxPolyphony: 8

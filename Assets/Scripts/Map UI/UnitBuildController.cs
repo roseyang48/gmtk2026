@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class UnitBuildController : MonoBehaviour
 {
@@ -64,12 +65,14 @@ public class UnitBuildController : MonoBehaviour
 
     [SerializeField]
     TextMeshProUGUI cavalryBuildTextSecondary;
-
+    private InputAction closeAction;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         HideCanvas();
+        closeAction = InputSystem.actions.FindAction("Pause");
+        closeAction.performed += context => {HideCanvas();};
     }
 
     // Update is called once per frame
@@ -144,6 +147,7 @@ public class UnitBuildController : MonoBehaviour
         unitCanvasGroup.alpha = 1f;
         unitCanvasGroup.interactable = true;
         unitCanvasGroup.blocksRaycasts = true;
+        GameManager.Instance.onUnitScreen = true;
     }
 
     public void HideCanvas()
@@ -151,5 +155,6 @@ public class UnitBuildController : MonoBehaviour
         unitCanvasGroup.alpha = 0f;
         unitCanvasGroup.interactable = false;
         unitCanvasGroup.blocksRaycasts = false;
+        GameManager.Instance.onUnitScreen = false;
     }
 }
