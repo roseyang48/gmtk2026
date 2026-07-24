@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ResourceManager : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class ResourceManager : MonoBehaviour
         FOOD,
         WOOD,
     }
+
+    UnityEvent<ResourceType> resourceChangedEvent = new UnityEvent<ResourceType>();
 
     public static ResourceManager Instance;
 
@@ -63,12 +66,15 @@ public class ResourceManager : MonoBehaviour
         {
             case ResourceType.GOLD:
                 goldCount -= amount;
+                resourceChangedEvent.Invoke(resourceType);
                 return goldCount;
             case ResourceType.FOOD:
                 foodCount -= amount;
+                resourceChangedEvent.Invoke(resourceType);
                 return foodCount;
             case ResourceType.WOOD:
                 woodCount -= amount;
+                resourceChangedEvent.Invoke(resourceType);
                 return woodCount;
             default:
                 Debug.LogError("Invalid Resource Type");
@@ -84,17 +90,25 @@ public class ResourceManager : MonoBehaviour
         {
             case ResourceType.GOLD:
                 goldCount += amount;
+                resourceChangedEvent.Invoke(resourceType);
                 return goldCount;
             case ResourceType.FOOD:
                 foodCount += amount;
+                resourceChangedEvent.Invoke(resourceType);
                 return foodCount;
             case ResourceType.WOOD:
                 woodCount += amount;
+                resourceChangedEvent.Invoke(resourceType);
                 return woodCount;
             default:
                 Debug.LogError("Invalid Resource Type");
                 Debug.Break();
                 return -1;
         }
+    }
+
+    public UnityEvent<ResourceType> GetResourceChangedEvent()
+    {
+        return resourceChangedEvent;
     }
 }
