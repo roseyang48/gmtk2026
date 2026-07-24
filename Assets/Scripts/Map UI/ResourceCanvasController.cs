@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class ResourceCanvasController : MonoBehaviour
 {
@@ -37,18 +38,32 @@ public class ResourceCanvasController : MonoBehaviour
     TextMeshProUGUI unit4Counter;
 
 
+    int goldDisplayedValue = -1;
+    int foodDisplayedValue = -1;
+    int woodDisplayedValue = -1;
+
+    float targetTickerTime = .25f;
+
+    Coroutine goldTickerCoroutine;
+    Coroutine foodTickerCoroutine;
+    Coroutine woodTickerCoroutine;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        goldDisplayedValue = ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.GOLD);
+        foodDisplayedValue = ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.FOOD);
+        woodDisplayedValue = ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.WOOD);
+
+        ResourceManager.Instance.GetResourceChangedEvent().AddListener(OnResourceChanged);
     }
 
     // Update is called once per frame
     void Update()
     {
-        goldCounter.text = ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.GOLD).ToString();
-        woodCounter.text = ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.WOOD).ToString();
-        foodCounter.text = ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.FOOD).ToString();
+        goldCounter.text = goldDisplayedValue.ToString();
+        foodCounter.text = foodDisplayedValue.ToString();
+        woodCounter.text = woodDisplayedValue.ToString();
 
         int[] buildingUpkeep = GameManager.Instance.ComputeUpkeep();
 
@@ -62,5 +77,84 @@ public class ResourceCanvasController : MonoBehaviour
         unit1Counter.text = ArmyManager.Instance.GetUnitCount(ArmyManager.UnitType.INFANTRY).ToString();
         unit2Counter.text = ArmyManager.Instance.GetUnitCount(ArmyManager.UnitType.RANGED).ToString();
         unit3Counter.text = ArmyManager.Instance.GetUnitCount(ArmyManager.UnitType.CAVALRY).ToString();
+    }
+
+    void OnResourceChanged(ResourceManager.ResourceType resourceType)
+    {
+        switch (resourceType)
+        {
+            case ResourceManager.ResourceType.GOLD:
+                if (goldTickerCoroutine != null)
+                {
+                    StopCoroutine(goldTickerCoroutine);
+                }
+                goldTickerCoroutine = StartCoroutine(GoldTicker());
+                break;
+            case ResourceManager.ResourceType.FOOD:
+                if (foodTickerCoroutine != null)
+                {
+                    StopCoroutine(foodTickerCoroutine);
+                }
+                foodTickerCoroutine = StartCoroutine(FoodTicker());
+                break;
+            case ResourceManager.ResourceType.WOOD:
+                if (woodTickerCoroutine != null)
+                {
+                    StopCoroutine(woodTickerCoroutine);
+                }
+                woodTickerCoroutine = StartCoroutine(WoodTicker());
+                break;
+        }
+    }
+
+    IEnumerator GoldTicker()
+    {
+        while (goldDisplayedValue != ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.GOLD))
+        {
+            if (goldDisplayedValue > ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.GOLD))
+            {
+                goldDisplayedValue -= 1;
+            }
+            else
+            {
+                goldDisplayedValue += 1;
+            }
+            
+            yield return new WaitForSeconds(targetTickerTime / Mathf.Abs(goldDisplayedValue - ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.GOLD)));
+        }
+    }
+
+    IEnumerator FoodTicker()
+    {
+        while (foodDisplayedValue != ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.FOOD))
+        {
+            if (foodDisplayedValue > ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.FOOD))
+            {
+                foodDisplayedValue -= 1;
+            }
+            else
+            {
+                foodDisplayedValue += 1;
+            }
+
+            yield return new WaitForSeconds(targetTickerTime / Mathf.Abs(foodDisplayedValue - ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.FOOD)));
+        }
+    }
+
+    IEnumerator WoodTicker()
+    {
+        while (woodDisplayedValue != ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.WOOD))
+        {
+            if (woodDisplayedValue > ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.WOOD))
+            {
+                woodDisplayedValue -= 1;
+            }
+            else
+            {
+                woodDisplayedValue += 1;
+            }
+
+            yield return new WaitForSeconds(targetTickerTime / Mathf.Abs(woodDisplayedValue - ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.WOOD)));
+        }
     }
 }
