@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     Building[] buildingOptions;
 
+    [SerializeField]
+    RegionController[] regionControllers;
+
     [SerializeField] DialogueObject tutorialDialogue;
 
     int targetRegion = -1;
@@ -276,5 +279,10 @@ public class GameManager : MonoBehaviour
     public bool HasAttacked()
     {
         return hasAttacked;
+    }
+
+    public Transform GetRegionTransform(int regionNumber)
+    {
+        return regionControllers[regionNumber].gameObject.transform;
     }
 }

@@ -653,6 +653,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4595660206014772866, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
   m_PrefabInstance: {fileID: 107668253}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &107668255 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 888101466421444666, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
+  m_PrefabInstance: {fileID: 107668253}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2087a41a8bb7b46b185497f1d5afd6be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneButtonController
 --- !u!114 &107670962 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 286316048636771377, guid: e414de60bcfd1418194e3ae7ce2e3243, type: 3}
@@ -865,7 +876,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 62.5
+  m_fontSize: 60.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1435,7 +1446,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7833621656438852197, guid: e16de7423a6404566bf318bbe4a295b4, type: 3}
       propertyPath: m_fontSize
-      value: 26
+      value: 25.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2027,6 +2038,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 17310287533285292, guid: 7271280c53b8da6469f35945c0896ffd, type: 3}
+      propertyPath: m_fontSize
+      value: 49.7
+      objectReference: {fileID: 0}
     - target: {fileID: 267490669882128437, guid: 7271280c53b8da6469f35945c0896ffd, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2107,6 +2122,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4425271800440636006, guid: 7271280c53b8da6469f35945c0896ffd, type: 3}
+      propertyPath: m_fontSize
+      value: 48.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984031241837122855, guid: 7271280c53b8da6469f35945c0896ffd, type: 3}
+      propertyPath: m_fontSize
+      value: 51.55
+      objectReference: {fileID: 0}
     - target: {fileID: 5140717394825422276, guid: 7271280c53b8da6469f35945c0896ffd, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2130,6 +2153,22 @@ PrefabInstance:
     - target: {fileID: 6026628288697748617, guid: 7271280c53b8da6469f35945c0896ffd, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6696469782377173699, guid: 7271280c53b8da6469f35945c0896ffd, type: 3}
+      propertyPath: m_fontSize
+      value: 51.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060931177430980486, guid: 7271280c53b8da6469f35945c0896ffd, type: 3}
+      propertyPath: m_fontSize
+      value: 51.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 7130229351752720883, guid: 7271280c53b8da6469f35945c0896ffd, type: 3}
+      propertyPath: m_fontSize
+      value: 51.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 8626620048146882959, guid: 7271280c53b8da6469f35945c0896ffd, type: 3}
+      propertyPath: m_fontSize
+      value: 51.55
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2449,6 +2488,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4595660206014772866, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
   m_PrefabInstance: {fileID: 402017232}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &402017234 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 888101466421444666, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
+  m_PrefabInstance: {fileID: 402017232}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2087a41a8bb7b46b185497f1d5afd6be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneButtonController
 --- !u!1 &407581152
 GameObject:
   m_ObjectHideFlags: 0
@@ -2762,7 +2812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3026413036136328612, guid: 9c8135b76360a482b96d1ce51df10709, type: 3}
       propertyPath: m_fontSize
-      value: 24.85
+      value: 24.1
       objectReference: {fileID: 0}
     - target: {fileID: 3942910292343900595, guid: 9c8135b76360a482b96d1ce51df10709, type: 3}
       propertyPath: m_Name
@@ -2770,7 +2820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7564777479125904113, guid: 9c8135b76360a482b96d1ce51df10709, type: 3}
       propertyPath: m_fontSize
-      value: 26
+      value: 25.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3130,7 +3180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7833621656438852197, guid: e16de7423a6404566bf318bbe4a295b4, type: 3}
       propertyPath: m_fontSize
-      value: 26
+      value: 25.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3237,7 +3287,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32.65
+  m_fontSize: 31.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3356,6 +3406,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4595660206014772866, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
   m_PrefabInstance: {fileID: 562537034}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &562537036 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 888101466421444666, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
+  m_PrefabInstance: {fileID: 562537034}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2087a41a8bb7b46b185497f1d5afd6be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneButtonController
 --- !u!1 &623711310
 GameObject:
   m_ObjectHideFlags: 0
@@ -3500,6 +3561,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4595660206014772866, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
   m_PrefabInstance: {fileID: 637138626}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &637138628 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 888101466421444666, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
+  m_PrefabInstance: {fileID: 637138626}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2087a41a8bb7b46b185497f1d5afd6be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneButtonController
 --- !u!1 &679251858
 GameObject:
   m_ObjectHideFlags: 0
@@ -3782,6 +3854,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4595660206014772866, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
   m_PrefabInstance: {fileID: 699522936}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &699522938 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 888101466421444666, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
+  m_PrefabInstance: {fileID: 699522936}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2087a41a8bb7b46b185497f1d5afd6be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneButtonController
 --- !u!114 &700512028 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5542658951498299153, guid: e414de60bcfd1418194e3ae7ce2e3243, type: 3}
@@ -4480,6 +4563,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4595660206014772866, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
   m_PrefabInstance: {fileID: 813296084}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &813296086 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 888101466421444666, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
+  m_PrefabInstance: {fileID: 813296084}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2087a41a8bb7b46b185497f1d5afd6be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneButtonController
 --- !u!1 &822175886
 GameObject:
   m_ObjectHideFlags: 0
@@ -5241,7 +5335,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7833621656438852197, guid: e16de7423a6404566bf318bbe4a295b4, type: 3}
       propertyPath: m_fontSize
-      value: 26
+      value: 25.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5628,6 +5722,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4595660206014772866, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
   m_PrefabInstance: {fileID: 1057471022}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1057471024 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 888101466421444666, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
+  m_PrefabInstance: {fileID: 1057471022}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2087a41a8bb7b46b185497f1d5afd6be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneButtonController
 --- !u!1001 &1075937247
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5718,7 +5823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3026413036136328612, guid: 9c8135b76360a482b96d1ce51df10709, type: 3}
       propertyPath: m_fontSize
-      value: 24.85
+      value: 24.1
       objectReference: {fileID: 0}
     - target: {fileID: 3942910292343900595, guid: 9c8135b76360a482b96d1ce51df10709, type: 3}
       propertyPath: m_Name
@@ -5726,7 +5831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7564777479125904113, guid: 9c8135b76360a482b96d1ce51df10709, type: 3}
       propertyPath: m_fontSize
-      value: 26
+      value: 25.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6127,6 +6232,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4595660206014772866, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
   m_PrefabInstance: {fileID: 1188379164}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1188379166 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 888101466421444666, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
+  m_PrefabInstance: {fileID: 1188379164}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2087a41a8bb7b46b185497f1d5afd6be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneButtonController
 --- !u!1 &1202402553
 GameObject:
   m_ObjectHideFlags: 0
@@ -6433,6 +6549,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4595660206014772866, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
   m_PrefabInstance: {fileID: 1307029076}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1307029078 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 888101466421444666, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
+  m_PrefabInstance: {fileID: 1307029076}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2087a41a8bb7b46b185497f1d5afd6be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneButtonController
 --- !u!1 &1322032013
 GameObject:
   m_ObjectHideFlags: 0
@@ -7142,6 +7269,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4595660206014772866, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
   m_PrefabInstance: {fileID: 1357742069}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1357742071 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 888101466421444666, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
+  m_PrefabInstance: {fileID: 1357742069}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2087a41a8bb7b46b185497f1d5afd6be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneButtonController
 --- !u!1 &1358828521
 GameObject:
   m_ObjectHideFlags: 0
@@ -7562,6 +7700,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4595660206014772866, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
   m_PrefabInstance: {fileID: 1436317483}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1436317485 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 888101466421444666, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
+  m_PrefabInstance: {fileID: 1436317483}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2087a41a8bb7b46b185497f1d5afd6be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneButtonController
 --- !u!114 &1459090546 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5542658951498299153, guid: e414de60bcfd1418194e3ae7ce2e3243, type: 3}
@@ -7811,6 +7960,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4595660206014772866, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
   m_PrefabInstance: {fileID: 1524385535}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1524385537 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 888101466421444666, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
+  m_PrefabInstance: {fileID: 1524385535}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2087a41a8bb7b46b185497f1d5afd6be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneButtonController
 --- !u!1 &1545203799
 GameObject:
   m_ObjectHideFlags: 0
@@ -7972,7 +8132,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42.25
+  m_fontSize: 40.9
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8309,6 +8469,23 @@ MonoBehaviour:
   - {fileID: 11400000, guid: aff71db4e40f54f7ab4ffc4ac9091528, type: 2}
   - {fileID: 11400000, guid: af838f9b5d4f54885b575719a9893d7c, type: 2}
   - {fileID: 11400000, guid: f8be2996171374e33a1d9ad7fe237ea0, type: 2}
+  regionControllers:
+  - {fileID: 6087812197019803144}
+  - {fileID: 1057471024}
+  - {fileID: 1357742071}
+  - {fileID: 1748907957}
+  - {fileID: 402017234}
+  - {fileID: 1188379166}
+  - {fileID: 1524385537}
+  - {fileID: 813296086}
+  - {fileID: 107668255}
+  - {fileID: 562537036}
+  - {fileID: 637138628}
+  - {fileID: 1436317485}
+  - {fileID: 699522938}
+  - {fileID: 1995326111}
+  - {fileID: 1307029078}
+  - {fileID: 1903277083}
   tutorialDialogue: {fileID: 11400000, guid: 6b1c5d3c4a65b084eb8d11cceac1b930, type: 2}
   onUnitScreen: 0
 --- !u!114 &1647395949
@@ -8784,6 +8961,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4595660206014772866, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
   m_PrefabInstance: {fileID: 1748907955}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1748907957 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 888101466421444666, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
+  m_PrefabInstance: {fileID: 1748907955}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2087a41a8bb7b46b185497f1d5afd6be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneButtonController
 --- !u!1 &1758283718
 GameObject:
   m_ObjectHideFlags: 0
@@ -9177,7 +9365,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22.7
+  m_fontSize: 21.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -9643,6 +9831,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4595660206014772866, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
   m_PrefabInstance: {fileID: 1903277081}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1903277083 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 888101466421444666, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
+  m_PrefabInstance: {fileID: 1903277081}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2087a41a8bb7b46b185497f1d5afd6be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneButtonController
 --- !u!1 &1968912703
 GameObject:
   m_ObjectHideFlags: 0
@@ -10217,6 +10416,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4595660206014772866, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
   m_PrefabInstance: {fileID: 1995326109}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1995326111 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 888101466421444666, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
+  m_PrefabInstance: {fileID: 1995326109}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2087a41a8bb7b46b185497f1d5afd6be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneButtonController
 --- !u!1001 &2036679753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10428,7 +10638,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35.45
+  m_fontSize: 34
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -10711,7 +10921,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7833621656438852197, guid: e16de7423a6404566bf318bbe4a295b4, type: 3}
       propertyPath: m_fontSize
-      value: 26
+      value: 25.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11788,7 +11998,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26
+  m_fontSize: 25.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -11923,7 +12133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3026413036136328612, guid: 9c8135b76360a482b96d1ce51df10709, type: 3}
       propertyPath: m_fontSize
-      value: 24.85
+      value: 24.1
       objectReference: {fileID: 0}
     - target: {fileID: 3942910292343900595, guid: 9c8135b76360a482b96d1ce51df10709, type: 3}
       propertyPath: m_Name
@@ -11931,7 +12141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7564777479125904113, guid: 9c8135b76360a482b96d1ce51df10709, type: 3}
       propertyPath: m_fontSize
-      value: 26
+      value: 25.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12033,6 +12243,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
+--- !u!114 &6087812197019803144 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 888101466421444666, guid: 7faa1ffb132a24c8a8d5e04e834593f1, type: 3}
+  m_PrefabInstance: {fileID: 6087812197019803143}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2087a41a8bb7b46b185497f1d5afd6be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneButtonController
 --- !u!1001 &6099442548426852955
 PrefabInstance:
   m_ObjectHideFlags: 0
