@@ -7,8 +7,8 @@ class RegionInitializer : ScriptableObject
     public int regionNumber;
     public string regionName;
     public bool isRegionOccupied;
-    public bool hasViscount;
     public int regionIncome;
+    public int regionFood;
     public int buildingSlots;
     public Army regionArmy;
 

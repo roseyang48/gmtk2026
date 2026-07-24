@@ -229,6 +229,12 @@ public class RegionUIController : MonoBehaviour
 
                 buildingButtons[i].SetBuilding(activeRegion.GetConstructedBuildings()[i]);
             }
+            else
+            {
+                buildingButtons[i].GetComponent<CanvasGroup>().alpha = 0;
+                buildingButtons[i].GetComponent<CanvasGroup>().interactable = false;
+                buildingButtons[i].GetComponent<CanvasGroup>().blocksRaycasts = false;
+            }
         }
     }
 }

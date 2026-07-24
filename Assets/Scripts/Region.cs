@@ -18,6 +18,9 @@ public class Region
     int regionIncome = 0;
 
     [SerializeField]
+    int regionFood = 0;
+
+    [SerializeField]
     int buildingSlots = 2;
 
     [SerializeField]
@@ -26,12 +29,13 @@ public class Region
     [SerializeField]
     Army regionArmy;
 
-    public Region(int regionNumber, string regionName, bool isRegionOccupied, int regionIncome, int buildingSlots, Army regionArmy)
+    public Region(int regionNumber, string regionName, bool isRegionOccupied, int regionIncome, int regionFood, int buildingSlots, Army regionArmy)
     {
         this.regionNumber = regionNumber;
         this.regionName = regionName;
         this.isRegionOccupied = isRegionOccupied;
         this.regionIncome = regionIncome;
+        this.regionFood = regionFood;
         this.buildingSlots = buildingSlots;
         constructedBuildings = new Building[buildingSlots];
         this.regionArmy = regionArmy;
@@ -60,6 +64,11 @@ public class Region
     public int GetRegionIncome()
     {
         return regionIncome;
+    }
+
+    public int GetRegionFood()
+    {
+        return regionFood;
     }
 
     public int GetBuildingSlots()

@@ -15,8 +15,8 @@ MonoBehaviour:
   regionNumber: 11
   regionName: Sommetac
   isRegionOccupied: 1
-  hasViscount: 1
-  regionIncome: 30
+  regionIncome: 25
+  regionFood: 0
   buildingSlots: 4
   regionArmy:
     peasantCount: 6

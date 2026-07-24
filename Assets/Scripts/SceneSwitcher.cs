@@ -22,7 +22,7 @@ public class SceneSwitcher : MonoBehaviour
     }
 
     //Rest of Class
-    string mainMenuSceneName = "MainMenu";
+    string mainMenuSceneName = "MainMenuScene";
     string mapSceneName = "MapScene";
     string combatSceneName = "CombatScene";
     string victorySceneName = "VictoryScene";
@@ -41,7 +41,7 @@ public class SceneSwitcher : MonoBehaviour
         DEFEAT,
     }
 
-    public void LoadScene(SceneType sceneType, Army playerArmy, Army enemyArmy, bool wasSuccessful)
+    public void LoadScene(SceneType sceneType, Army playerArmy, Army enemyArmy, bool wasSuccessful, int turnCount, string cause)
     {
         if (awaitingSceneLoading)
         {
@@ -80,13 +80,13 @@ public class SceneSwitcher : MonoBehaviour
 
             case SceneType.VICTORY:
                 {
-                    StartCoroutine(LoadVictory());
+                    StartCoroutine(LoadVictory(turnCount));
                     break;
                 }
 
             case SceneType.DEFEAT:
                 {
-                    StartCoroutine(LoadDefeat());
+                    StartCoroutine(LoadDefeat(cause));
                     break;
                 }
                 /*
@@ -124,7 +124,7 @@ public class SceneSwitcher : MonoBehaviour
 
     public void LoadScene(SceneType sceneType, Army playerArmy, Army enemyArmy)
     {
-        LoadScene(sceneType, playerArmy, enemyArmy, false);
+        LoadScene(sceneType, playerArmy, enemyArmy, false, -1, "");
     }
 
     public void LoadScene(SceneType sceneType)
@@ -134,7 +134,17 @@ public class SceneSwitcher : MonoBehaviour
 
     public void LoadScene(SceneType sceneType, bool wasSuccessful)
     {
-        LoadScene(sceneType, null, null, wasSuccessful);
+        LoadScene(sceneType, null, null, wasSuccessful, -1, "");
+    }
+
+    public void LoadScene(SceneType sceneType, int turnCount)
+    {
+        LoadScene(sceneType, null, null, false, turnCount, "");
+    }
+
+    public void LoadScene(SceneType sceneType, string cause)
+    {
+        LoadScene(sceneType, null, null, false, -1, cause);
     }
 
     IEnumerator LoadMainMenu()
@@ -184,21 +194,25 @@ public class SceneSwitcher : MonoBehaviour
         Cursor.visible = true;
     }
 
-    IEnumerator LoadVictory()
+    IEnumerator LoadVictory(int turnCount)
     {
         AsyncOperation victoryLoading = SceneManager.LoadSceneAsync(victorySceneName, LoadSceneMode.Single);
 
         yield return new WaitUntil(() => { return victoryLoading.isDone; });
 
+        GameObject.Find("Canvas").GetComponent<VictorySceneController>().Setup(turnCount);
+
         awaitingSceneLoading = false;
         Cursor.visible = true;
     }
 
-    IEnumerator LoadDefeat()
+    IEnumerator LoadDefeat(string cause)
     {
         AsyncOperation defeatLoading = SceneManager.LoadSceneAsync(defeatSceneName, LoadSceneMode.Single);
 
         yield return new WaitUntil(() => { return defeatLoading.isDone; });
+
+        GameObject.Find("Canvas").GetComponent<DefeatSceneController>().Setup(cause);
 
         awaitingSceneLoading = false;
         Cursor.visible = true;
