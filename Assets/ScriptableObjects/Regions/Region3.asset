@@ -22,5 +22,5 @@ MonoBehaviour:
     peasantCount: 2
     infantryCount: 4
     rangedCount: 0
-    cavalryCount: 4
+    cavalryCount: 10
   neighborRegions: 020000000400000005000000
