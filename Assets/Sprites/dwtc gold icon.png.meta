@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7ab6a67c281c8554eb10fb1effc57a96
+guid: 26e850fafb747fd4990aed4ea6816103
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7144600992510646727
-    second: DWTC Combat Map - Floor_0
+      213: -8419704983935146254
+    second: dwtc gold icon_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DWTC Combat Map - Floor_0
+      name: dwtc gold icon_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1080
+        x: 30
+        y: 35
+        width: 434
+        height: 429
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7c9108cbfb8b62360800000000000000
-      internalID: 7144600992510646727
+      spriteID: 2f6a5f63de2372b80800000000000000
+      internalID: -8419704983935146254
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      DWTC Combat Map - Floor_0: 7144600992510646727
+      dwtc gold icon_0: -8419704983935146254
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
