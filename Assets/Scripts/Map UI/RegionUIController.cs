@@ -181,7 +181,6 @@ public class RegionUIController : MonoBehaviour
 
             foreach (string flag in buildOption.GetBuildingOption().GetPrereqFlags())
             {
-                Debug.Log(ArmyManager.Instance.CheckCombatFlag(flag));
                 if (!ArmyManager.Instance.CheckCombatFlag(flag))
                 {
                     missingPrereqs = true;
@@ -191,7 +190,6 @@ public class RegionUIController : MonoBehaviour
 
             if (missingPrereqs)
             {
-                Debug.Log("missing");
                 buildOption.gameObject.SetActive(false);
                 continue;
             }
