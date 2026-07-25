@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Gunsmith
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingName: Gunsmith
-  buildingDescription: Unlocks access to Musketeers.
+  buildingDescription: Unlocks access to <sprite="final_icons" index=2>.
   woodCost: 50
   goldCost: 150
   goldUpkeep: 15

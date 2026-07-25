@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Printer
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingName: Printer
-  buildingDescription: Peasants no longer flee. Instead, they gain attack speed and
-    resistance at lower health.
+  buildingDescription: <sprite="final_icons" index=0> no longer flee. Instead, they
+    gain attack speed and resistance at lower health.
   woodCost: 125
   goldCost: 125
   goldUpkeep: 25

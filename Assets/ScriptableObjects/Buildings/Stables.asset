@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Stables
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingName: Stables
-  buildingDescription: Unlocks access to Cavalry.
+  buildingDescription: Unlocks access to <sprite="final_icons" index=3>.
   woodCost: 150
   goldCost: 50
   goldUpkeep: 15

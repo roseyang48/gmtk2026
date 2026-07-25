@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Barracks
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingName: Barracks
-  buildingDescription: Increases unit capacity by 3.
+  buildingDescription: Increases max <sprite="final_icons" index=7> by 3.
   woodCost: 100
   goldCost: 50
   goldUpkeep: 12

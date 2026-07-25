@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Manege
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingName: "Maneg\xE9"
-  buildingDescription: Cavalry units charge more frequently and deal more damage
-    when charging.
+  buildingDescription: <sprite="final_icons" index=3> charge more frequently and
+    deal more damage when charging.
   woodCost: 150
   goldCost: 100
   goldUpkeep: 25

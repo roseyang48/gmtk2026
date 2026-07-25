@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Market
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingName: Market
-  buildingDescription: Produces 25 Gold per turn.
+  buildingDescription: Produces 25 <sprite="final_icons" index=4> per turn.
   woodCost: 100
   goldCost: 0
   goldUpkeep: 0

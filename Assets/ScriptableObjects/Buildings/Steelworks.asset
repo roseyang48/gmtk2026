@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Steelworks
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingName: Steelworks
-  buildingDescription: Infantry units take slightly reduced damage from all sources.
+  buildingDescription: <sprite="final_icons" index=1> units take slightly reduced
+    damage from all sources.
   woodCost: 100
   goldCost: 150
   goldUpkeep: 25

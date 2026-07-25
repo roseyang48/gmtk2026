@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Lumberyard
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingName: Lumberyard
-  buildingDescription: Produces 15 Wood per turn.
+  buildingDescription: Produces 15 <sprite="final_icons" index=6> per turn.
   woodCost: 0
   goldCost: 50
   goldUpkeep: 5

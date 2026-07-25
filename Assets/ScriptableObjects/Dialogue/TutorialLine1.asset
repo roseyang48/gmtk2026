@@ -34,8 +34,9 @@ MonoBehaviour:
   - speakerSprite: {fileID: 21300000, guid: 48cc6b683419b46daba35c5468be3e9e, type: 3}
     side: 1
     dialogueText: However, buildings and armies are expensive, so they'll also consume
-      some resources to maintain. Food feeds your army, Gold pays for buildings and
-      units alike, and Lumber is used to build new buildings.
+      some resources to maintain. <sprite="final_icons" index=5> Food feeds your
+      army, <sprite="final_icons" index=4> Gold pays for buildings and units alike,
+      and <sprite="final_icons" index=6> Lumber is used to build new buildings.
     seen: 0
   - speakerSprite: {fileID: 21300000, guid: 48cc6b683419b46daba35c5468be3e9e, type: 3}
     side: 0

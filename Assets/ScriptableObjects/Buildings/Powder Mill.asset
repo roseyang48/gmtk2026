@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Powder Mill
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingName: Powder Mill
-  buildingDescription: Musketeers gain increased attack range and damage.
+  buildingDescription: <sprite="final_icons" index=2> gain increased attack range
+    and damage.
   woodCost: 50
   goldCost: 200
   goldUpkeep: 25

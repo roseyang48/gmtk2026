@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Blacksmith
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingName: Blacksmith
-  buildingDescription: Unlocks access to Infantry.
+  buildingDescription: Unlocks access to <sprite="final_icons" index=1>.
   woodCost: 100
   goldCost: 100
   goldUpkeep: 15

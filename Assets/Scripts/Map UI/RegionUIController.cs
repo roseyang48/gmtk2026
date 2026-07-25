@@ -144,8 +144,8 @@ public class RegionUIController : MonoBehaviour
             assaultButton.gameObject.SetActive(false);
         }
 
-        regionGoldText.text = "G: " + region.GetRegionIncome();
-        regionFoodText.text = "F: " + region.GetRegionFood();
+        regionGoldText.text = "<sprite=\"final_icons\" index=4>: " + region.GetRegionIncome();
+        regionFoodText.text = "<sprite=\"final_icons\" index=6>: " + region.GetRegionFood();
 
         activeRegion = region;
 
@@ -236,8 +236,8 @@ public class RegionUIController : MonoBehaviour
         {
             buildingName.text = "None";
             buildingDescription.text = "";
-            buildingGoldCost.text = "--- Gold";
-            buildingWoodCost.text = "--- Wood";
+            buildingGoldCost.text = "--- <sprite=\"final_icons\" index=4>";
+            buildingWoodCost.text = "--- <sprite=\"final_icons\" index=6>";
             confirmButton.interactable = false;
             return;
         }
@@ -255,9 +255,9 @@ public class RegionUIController : MonoBehaviour
 
         buildingName.text = building.GetBuildingName();
         buildingDescription.text = building.GetBuildingDescription();
-        buildingGoldCost.text = goldCost + " Gold";
-        buildingWoodCost.text = woodCost + " Wood";
-        buildingUpkeep.text = "Upkeep: " + building.GetGoldUpkeep() + " Gold";
+        buildingGoldCost.text = goldCost + " <sprite=\"final_icons\" index=4>";
+        buildingWoodCost.text = woodCost + " <sprite=\"final_icons\" index=6>";
+        buildingUpkeep.text = "Upkeep: " + building.GetGoldUpkeep() + " <sprite=\"final_icons\" index=4>";
         string tags = (building.IsTech() ? "Tech" : "") + (building.IsTech() && building.IsUnique() ? ", " : "") + (building.IsUnique() ? "Unique" : "");
         buildingTags.text = tags;
 
