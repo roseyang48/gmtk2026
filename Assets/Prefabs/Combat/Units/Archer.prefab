@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7004c8f885e39da4a982a36c17b86d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Archer
-  statBlock: {fileID: 11400000, guid: 205c2c3912cce1c40aaad630f6bd7146, type: 2}
+  baseStats: {fileID: 11400000, guid: 205c2c3912cce1c40aaad630f6bd7146, type: 2}
   targetUnit: {fileID: 0}
   unitTeam: 0
   animator: {fileID: 1475075482757557249}
@@ -373,6 +373,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 94094748f71400749aa5d1a5981aa8b9, type: 3}
   - {fileID: 8300000, guid: 9209c3a79570b71419b990e6d847dc31, type: 3}
   - {fileID: 8300000, guid: 4253cd7848312b441b4cb985437c320a, type: 3}
+  dmgUpgradeValue: 1.5
+  rangeUpgradeValue: 1
 --- !u!50 &4579188026456137727
 Rigidbody2D:
   serializedVersion: 5

@@ -4,6 +4,17 @@ public class Archer : Unit
 {
     [SerializeField] GameObject arrow;
     [SerializeField] AudioClip[] attackAudio;
+    [SerializeField] float dmgUpgradeValue;
+    [SerializeField] float rangeUpgradeValue;
+    public override void Initialize(Color hatColor, CombatHandler.Team team)
+    {
+        base.Initialize(hatColor, team);
+        if(ArmyManager.Instance.CheckCombatFlag("rangedUpgraded0") && team == CombatHandler.Team.Player)
+        {
+            statBlock.attackDamage += dmgUpgradeValue;
+            statBlock.attackRange += rangeUpgradeValue;
+        }
+    }
     public override void Attack()
     {
         animator.Play("ArcherAttack");
