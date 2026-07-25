@@ -16,11 +16,12 @@ MonoBehaviour:
   buildingDescription: Produces 20 Food per turn.
   woodCost: 25
   goldCost: 25
-  goldUpkeep: 2
+  goldUpkeep: 5
   goldIncome: 0
   foodIncome: 20
   woodIncome: 0
   unitCapacityBonus: 0
-  isInfantryUnlocker: 0
-  isRangedUnlocker: 0
-  isCavalryUnlocker: 0
+  isUnique: 0
+  isTech: 0
+  armyFlags: []
+  prereqFlags: []
