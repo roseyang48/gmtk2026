@@ -199,12 +199,12 @@ public class GameManager : MonoBehaviour
         }
         if(food != 0)
         {
-            PopUpHandler.Instance.SpawnPopup((gold > 0 ? "+" : "-") + food + " Food!", GetRegionTransform(regionNumber).position);
+            PopUpHandler.Instance.SpawnPopup((food > 0 ? "+" : "-") + food + " Food!", GetRegionTransform(regionNumber).position);
             yield return new WaitForSeconds(0.5f);
         }
         if(wood != 0)
         {
-            PopUpHandler.Instance.SpawnPopup((gold > 0 ? "+" : "-") + wood + " Wood!", GetRegionTransform(regionNumber).position);
+            PopUpHandler.Instance.SpawnPopup((wood > 0 ? "+" : "-") + wood + " Wood!", GetRegionTransform(regionNumber).position);
             yield return new WaitForSeconds(0.5f);
         }
     }
