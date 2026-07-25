@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d617b8748994bb440869ee87d8c75a53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Infantry
-  statBlock: {fileID: 11400000, guid: b44e0b99ecb43c54aa4f5c10e1abf932, type: 2}
+  baseStats: {fileID: 11400000, guid: b44e0b99ecb43c54aa4f5c10e1abf932, type: 2}
   targetUnit: {fileID: 0}
   unitTeam: 0
   animator: {fileID: 6425759936328478724}
@@ -283,6 +283,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 846503be1530b37498594419dbf0d059, type: 3}
   - {fileID: 8300000, guid: 13223bef565a27c40a2ab587f28ff32b, type: 3}
   - {fileID: 8300000, guid: 56063e21f49bc8546bcce06219aaf557, type: 3}
+  upgradeDamageMod: 0.75
+  upgradeDamageReduction: 0.5
 --- !u!50 &6006938986322812731
 Rigidbody2D:
   serializedVersion: 5

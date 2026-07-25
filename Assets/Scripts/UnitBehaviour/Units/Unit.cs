@@ -6,7 +6,9 @@ using UnityEngine.AI;
 public class Unit : MonoBehaviour
 {
     public enum AnimationTriggerType {Hit, Damaged, Charge}
-    public StatBlock statBlock;
+    public StatBlock baseStats;
+    [HideInInspector]
+    public StatSheet statBlock;
     protected float currHP;
     [HideInInspector]
     public Unit targetUnit;
@@ -29,6 +31,7 @@ public class Unit : MonoBehaviour
 
     void Awake()
     {
+        statBlock = new StatSheet(baseStats);
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         agent.speed = statBlock.moveSpeed;
@@ -50,7 +53,7 @@ public class Unit : MonoBehaviour
         hpSprite.color = hpGradient.Evaluate(1 - currHP / statBlock.maxHP);
         StateMachine.Initialize(IdleState);
     }
-    public void Initialize(Color hatColor, CombatHandler.Team team)
+    public virtual void Initialize(Color hatColor, CombatHandler.Team team)
     {
         unitTeam = team;
         hatSprite.color = hatColor;
@@ -62,6 +65,11 @@ public class Unit : MonoBehaviour
     }
     public virtual void Update()
     {
+        CheckFlee();
+        StateMachine.currState.Update();
+    }
+    public virtual void CheckFlee()
+    {
         if(currHP/statBlock.maxHP <= statBlock.fleeThreshhold && StateMachine.currState != FleeState && !hasFled)
         {
             hasFled = true;
@@ -70,7 +78,6 @@ public class Unit : MonoBehaviour
                 StateMachine.ChangeState(FleeState);
             }
         }
-        StateMachine.currState.Update();
     }
     void FixedUpdate()
     {

@@ -155,6 +155,10 @@ public class CombatHandler : MonoBehaviour
             {
                 case Team.Player:
                     titleText.text = "Count Conquered!";
+                    foreach(GameObject obj in GameObject.FindGameObjectsWithTag("PlayerUnit"))
+                    {
+                        AddSurvivor(obj.GetComponent<Unit>().GetUnitType());
+                    }
                     StartCoroutine("RemoveUnits", "PlayerUnit");
                     playerWon = true;
                     break;
@@ -169,10 +173,6 @@ public class CombatHandler : MonoBehaviour
             endMenuAnimator.SetTrigger("OpenMenu");
 
         }
-        if(winner == Team.Player)
-        {
-            AddSurvivor(type);
-        }
         peasantCountText.text = survivors.peasantCount.ToString();
         infantryCountText.text = survivors.infantryCount.ToString();
         rangedCountText.text = survivors.rangedCount.ToString();
@@ -181,6 +181,7 @@ public class CombatHandler : MonoBehaviour
     private IEnumerator RemoveUnits(string team)
     {
         yield return new WaitForEndOfFrame();
+        yield return new WaitForSeconds(0.1f);
         GameObject[] objects = GameObject.FindGameObjectsWithTag(team);
         foreach(GameObject obj in objects)
         {
@@ -188,6 +189,7 @@ public class CombatHandler : MonoBehaviour
             {
                 Unit unit = obj.GetComponent<Unit>();
                 unit.Die();
+
             }
             yield return new WaitForSeconds(vanishTime/objects.Length);
         }

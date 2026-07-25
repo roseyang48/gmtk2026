@@ -11,6 +11,17 @@ public class Cavalry : Unit
     private bool isCharging = false;
     private float timer = 0f;
     [SerializeField] AudioClip[] attackAudio;
+    [SerializeField] private float chargeTimerUpgrade;
+    [SerializeField] private float chargeDamageUpgrade;
+    public override void Initialize(Color hatColor, CombatHandler.Team team)
+    {
+        base.Initialize(hatColor, team);
+        if(ArmyManager.Instance.CheckCombatFlag("cavalryUpgraded0") && team == CombatHandler.Team.Player)
+        {
+            chargeTimer -= chargeTimerUpgrade;
+            chargeDamageMod += chargeDamageUpgrade;
+        }
+    }
     public override void Attack()
     {
         if(!isCharging)
@@ -37,7 +48,7 @@ public class Cavalry : Unit
                 timer = 0f;
             }
         }
-        if(isCharging && agent.velocity.magnitude <= minSpeed)
+        if(isCharging && agent.velocity.magnitude <= minSpeed && StateMachine.currState == ChaseState)
         {
             isCharging = false;
             chargeTrailRenderer.emitting = false;
