@@ -39,6 +39,9 @@ public class RegionUIController : MonoBehaviour
     TextMeshProUGUI buildingName;
 
     [SerializeField]
+    Image buildingSprite;
+
+    [SerializeField]
     TextMeshProUGUI buildingDescription;
 
     [SerializeField]
@@ -233,6 +236,7 @@ public class RegionUIController : MonoBehaviour
         if (building == null)
         {
             buildingName.text = "None";
+            buildingSprite.sprite = null;
             buildingDescription.text = "";
             buildingGoldCost.text = "--- <sprite=\"final_icons\" index=4>";
             buildingWoodCost.text = "--- <sprite=\"final_icons\" index=6>";
@@ -252,6 +256,7 @@ public class RegionUIController : MonoBehaviour
         }
 
         buildingName.text = building.GetBuildingName();
+        buildingSprite.sprite = building.GetBuildingIcon();
         buildingDescription.text = building.GetBuildingDescription();
         buildingGoldCost.text = goldCost + " <sprite=\"final_icons\" index=4>";
         buildingWoodCost.text = woodCost + " <sprite=\"final_icons\" index=6>";

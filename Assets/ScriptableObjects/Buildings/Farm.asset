@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Farm
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingName: Farm
+  buildingIcon: {fileID: 21300000, guid: 76e192d0099ca4c5ca4d89a17c40bd9c, type: 3}
   buildingDescription: Produces 20 <sprite="final_icons" index=5> per turn.
   woodCost: 50
   goldCost: 25
