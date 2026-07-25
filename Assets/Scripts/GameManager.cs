@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     Building[] buildingOptions;
 
     [SerializeField]
-    RegionController[] regionControllers;
+    string[] regionObjectNames;
 
     [SerializeField] DialogueObject tutorialDialogue;
 
@@ -328,6 +328,6 @@ public class GameManager : MonoBehaviour
 
     public Transform GetRegionTransform(int regionNumber)
     {
-        return regionControllers[regionNumber].gameObject.transform;
+        return GameObject.Find("GameMap/"+regionObjectNames[regionNumber]).transform;
     }
 }
