@@ -12,6 +12,7 @@ public class BuildingButtonController : MonoBehaviour
     [SerializeField]
     TMPro.TextMeshProUGUI buildingName;
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -38,6 +39,7 @@ public class BuildingButtonController : MonoBehaviour
         else
         {
             buildingName.text = building.GetBuildingName();
+            GetComponent<Button>().interactable = false;
         }
     }
 }
