@@ -46,4 +46,10 @@ public class PauseHandler : MonoBehaviour
     {
         Time.timeScale = value;
     }
+
+    public void QuitToMainMenu()
+    {
+        Destroy(GameManager.Instance.gameObject);
+        SceneSwitcher.Instance.LoadScene(SceneSwitcher.SceneType.MAIN_MENU);
+    }
 }
