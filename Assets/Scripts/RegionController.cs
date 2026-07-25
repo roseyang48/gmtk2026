@@ -6,10 +6,16 @@ public class RegionController : MonoBehaviour
     int regionNumber = -1;
     [SerializeField] AudioClip selectSFX;
 
+    [SerializeField]
+    Transform popupTransform;
+
+    [SerializeField]
+    SpriteRenderer selectSpriteRenderer;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        HideSelectSprite();
     }
 
     // Update is called once per frame
@@ -32,5 +38,20 @@ public class RegionController : MonoBehaviour
     public void RegionSelected()
     {
         AudioManager.Instance.PlaySFX(selectSFX, transform, 1f);
+    }
+
+    public Transform GetPopupTransform()
+    {
+        return popupTransform;
+    }
+
+    public void ShowSelectSprite()
+    {
+        selectSpriteRenderer.enabled = true;
+    }
+
+    public void HideSelectSprite()
+    {
+        selectSpriteRenderer.enabled = false;
     }
 }

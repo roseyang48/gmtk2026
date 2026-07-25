@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     string[] regionObjectNames;
 
+    RegionController[] regionControllers;
+
     [SerializeField] DialogueObject tutorialDialogue;
 
     int targetRegion = -1;
@@ -64,6 +66,18 @@ public class GameManager : MonoBehaviour
     {
         regionUIController.ShowCanvas(RegionManager.Instance.GetRegion(regionNumber));
         unitBuildController.HideCanvas();
+
+        foreach (RegionController region in regionControllers)
+        {
+            if (region.GetRegionNumber() == regionNumber)
+            {
+                region.ShowSelectSprite();
+            }
+            else
+            {
+                region.HideSelectSprite();
+            }
+        }
     }
 
     public void UnitUpgradeSelected()
@@ -98,6 +112,10 @@ public class GameManager : MonoBehaviour
     {
         regionUIController.HideCanvas();
         unitBuildController.HideCanvas();
+        foreach (RegionController region in regionControllers)
+        {
+            region.HideSelectSprite();
+        }
     }
 
     public Building[] GetConstructedBuildings(bool includeOccupied)
@@ -199,12 +217,12 @@ public class GameManager : MonoBehaviour
         }
         if(food != 0)
         {
-            PopUpHandler.Instance.SpawnPopup((food > 0 ? "+" : "-") + food + " <sprite=\"final_icons\" index=6>!", GetRegionTransform(regionNumber).position);
+            PopUpHandler.Instance.SpawnPopup((food > 0 ? "+" : "-") + food + " <sprite=\"final_icons\" index=5>!", GetRegionTransform(regionNumber).position);
             yield return new WaitForSeconds(0.5f);
         }
         if(wood != 0)
         {
-            PopUpHandler.Instance.SpawnPopup((wood > 0 ? "+" : "-") + wood + " <sprite=\"final_icons\" index=7>!", GetRegionTransform(regionNumber).position);
+            PopUpHandler.Instance.SpawnPopup((wood > 0 ? "+" : "-") + wood + " <sprite=\"final_icons\" index=6>!", GetRegionTransform(regionNumber).position);
             yield return new WaitForSeconds(0.5f);
         }
     }
@@ -221,22 +239,22 @@ public class GameManager : MonoBehaviour
         int cavalryUpkeep = ArmyManager.Instance.GetFoodUpkeep(ArmyManager.UnitType.CAVALRY);
         if(peasantUpkeep > 0)
         {
-            PopUpHandler.Instance.SpawnPopup(ArmyManager.Instance.GetArmy().peasantCount + "x <sprite=\"final_icons\" index=0>: -" + peasantUpkeep + " <sprite=\"final_icons\" index=6>!", armyPopupTransform.position);
+            PopUpHandler.Instance.SpawnPopup(ArmyManager.Instance.GetArmy().peasantCount + "x <sprite=\"final_icons\" index=0>: -" + peasantUpkeep + " <sprite=\"final_icons\" index=5>!", armyPopupTransform.position);
             yield return new WaitForSeconds(0.5f);
         }
         if(infantryUpkeep > 0)
         {
-            PopUpHandler.Instance.SpawnPopup(ArmyManager.Instance.GetArmy().infantryCount + "x <sprite=\"final_icons\" index=1>: -" + infantryUpkeep + " <sprite=\"final_icons\" index=6>!", armyPopupTransform.position);
+            PopUpHandler.Instance.SpawnPopup(ArmyManager.Instance.GetArmy().infantryCount + "x <sprite=\"final_icons\" index=1>: -" + infantryUpkeep + " <sprite=\"final_icons\" index=5>!", armyPopupTransform.position);
             yield return new WaitForSeconds(0.5f);
         }
         if(rangedUpkeep > 0)
         {
-            PopUpHandler.Instance.SpawnPopup(ArmyManager.Instance.GetArmy().rangedCount + "x <sprite=\"final_icons\" index=2>: -" + rangedUpkeep + " <sprite=\"final_icons\" index=6>!", armyPopupTransform.position);
+            PopUpHandler.Instance.SpawnPopup(ArmyManager.Instance.GetArmy().rangedCount + "x <sprite=\"final_icons\" index=2>: -" + rangedUpkeep + " <sprite=\"final_icons\" index=5>!", armyPopupTransform.position);
             yield return new WaitForSeconds(0.5f);
         }
         if(cavalryUpkeep > 0)
         {
-            PopUpHandler.Instance.SpawnPopup(ArmyManager.Instance.GetArmy().cavalryCount + "x <sprite=\"final_icons\" index=3>: -" + cavalryUpkeep + " <sprite=\"final_icons\" index=6>!", armyPopupTransform.position);
+            PopUpHandler.Instance.SpawnPopup(ArmyManager.Instance.GetArmy().cavalryCount + "x <sprite=\"final_icons\" index=3>: -" + cavalryUpkeep + " <sprite=\"final_icons\" index=5>!", armyPopupTransform.position);
             yield return new WaitForSeconds(0.5f);
         }
     } 
@@ -363,6 +381,13 @@ public class GameManager : MonoBehaviour
     {
         regionUIController = GameObject.Find("RegionUICanvas").GetComponent<RegionUIController>();
         unitBuildController = GameObject.Find("UnitBuildCanvas").GetComponent<UnitBuildController>();
+
+        regionControllers = new RegionController[RegionManager.Instance.GetAllRegions().Length];
+
+        for (int i = 0; i < RegionManager.Instance.GetAllRegions().Length; i++)
+        {
+            regionControllers[i] = GameObject.Find("GameMap/" + regionObjectNames[i]).GetComponent<RegionController>();
+        }
     }
 
     public bool HasAttacked()
@@ -372,7 +397,7 @@ public class GameManager : MonoBehaviour
 
     public Transform GetRegionTransform(int regionNumber)
     {
-        return GameObject.Find("GameMap/"+regionObjectNames[regionNumber]).transform;
+        return regionControllers[regionNumber].GetPopupTransform();
     }
 
     public int GetTechBuildingsBuilt()
