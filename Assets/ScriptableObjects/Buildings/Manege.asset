@@ -25,6 +25,6 @@ MonoBehaviour:
   isUnique: 1
   isTech: 1
   armyFlags:
-  - cavalryUpgrade0
+  - cavalryUpgraded0
   prereqFlags:
   - cavalryUnlocked

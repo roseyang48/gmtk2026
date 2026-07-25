@@ -24,6 +24,6 @@ MonoBehaviour:
   isUnique: 1
   isTech: 1
   armyFlags:
-  - rangedUpgrade0
+  - rangedUpgraded0
   prereqFlags:
   - rangedUnlocked

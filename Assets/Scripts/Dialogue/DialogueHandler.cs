@@ -103,13 +103,13 @@ public class DialogueHandler : MonoBehaviour
                     currDialogue++;
                     break;
                 }
-                else if(InputSystem.actions.FindAction("Interact").WasPressedThisFrame() || InputSystem.actions.FindAction("Scroll").ReadValue<float>() > 0)
+                else if(InputSystem.actions.FindAction("Interact").WasPressedThisFrame()/* || InputSystem.actions.FindAction("Scroll").ReadValue<float>() > 0*/)
                 {
                     currDialogue++;
                     currLine.seen = true;
                     break;
                 }
-                else if(InputSystem.actions.FindAction("Scroll").ReadValue<float>() < 0 && currDialogue > 0)
+                else if(/*InputSystem.actions.FindAction("Scroll").ReadValue<float>() < 0 && currDialogue > 0*/ false)
                 {
                     currDialogue--;
                     break;

@@ -24,6 +24,6 @@ MonoBehaviour:
   isUnique: 1
   isTech: 1
   armyFlags:
-  - infantryUpgrade0
+  - infantryUpgraded0
   prereqFlags:
   - infantryUnlocked

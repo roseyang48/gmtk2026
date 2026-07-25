@@ -122,15 +122,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "Scroll",
-                    "type": "Value",
-                    "id": "6e327727-dfa8-4f42-8128-0986c1184941",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -582,17 +573,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Skip",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "6db6c92a-c9e8-40e0-9301-7c1b4dd4c3a7",
-                    "path": "<Mouse>/scroll",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Scroll",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

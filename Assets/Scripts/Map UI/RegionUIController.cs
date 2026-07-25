@@ -258,7 +258,7 @@ public class RegionUIController : MonoBehaviour
         buildingDescription.text = building.GetBuildingDescription();
         buildingGoldCost.text = goldCost + " Gold";
         buildingWoodCost.text = woodCost + " Wood";
-        buildingUpkeep.text = building.GetGoldUpkeep() + " Gold";
+        buildingUpkeep.text = "Upkeep: " + building.GetGoldUpkeep() + " Gold";
         string tags = (building.IsTech() ? "Tech" : "") + (building.IsTech() && building.IsUnique() ? ", " : "") + (building.IsUnique() ? "Unique" : "");
         buildingTags.text = tags;
 

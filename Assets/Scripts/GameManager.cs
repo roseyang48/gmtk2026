@@ -176,6 +176,8 @@ public class GameManager : MonoBehaviour
                 {
                     if(currBuilding != null)
                     {
+                        totalGold -= currBuilding.GetGoldUpkeep();
+
                         totalGold += currBuilding.GetGoldIncome();
                         totalFood += currBuilding.GetFoodIncome();
                         totalWood += currBuilding.GetWoodIncome();

@@ -3199,6 +3199,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3508067045623843999, guid: 9c0f8ea50a5f72a4cb189fbe52fddade, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5182889490902988039, guid: 9c0f8ea50a5f72a4cb189fbe52fddade, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -10944,6 +10948,8 @@ MonoBehaviour:
   buildingDescription: {fileID: 1026295629}
   buildingGoldCost: {fileID: 1716841881}
   buildingWoodCost: {fileID: 822175888}
+  buildingUpkeep: {fileID: 379501306}
+  buildingTags: {fileID: 1890544777}
   confirmButton: {fileID: 792577185}
   assaultButton: {fileID: 1337032215}
   assaultButtonText: {fileID: 1358828523}

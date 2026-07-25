@@ -25,5 +25,5 @@ MonoBehaviour:
   isUnique: 1
   isTech: 1
   armyFlags:
-  - peasantUpgrade0
+  - peasantUpgraded0
   prereqFlags: []
