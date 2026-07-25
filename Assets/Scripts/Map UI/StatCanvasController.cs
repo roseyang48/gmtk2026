@@ -4,7 +4,7 @@ using TMPro;
 public class StatCanvasController : MonoBehaviour
 {
     [SerializeField]
-    TextMeshProUGUI countCounter;
+    CountCounterAnimation countCounter;
 
     [SerializeField]
     TextMeshProUGUI turnCounter;
@@ -20,18 +20,6 @@ public class StatCanvasController : MonoBehaviour
     void Update()
     {
         turnCounter.text = "Turn " + GameManager.Instance.GetTurnCount();
-
-        int occupiedCount = 0;
-
-        for (int i = 0; i < RegionManager.Instance.GetAllRegions().Length; i++)
-        {
-            if (RegionManager.Instance.GetRegion(i).IsRegionOccupied())
-            {
-                occupiedCount += 1;
-            }
-        }
-
-        countCounter.text = occupiedCount.ToString();
     }
 
     public void AdvanceTurn()

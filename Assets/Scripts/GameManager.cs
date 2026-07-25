@@ -369,10 +369,22 @@ public class GameManager : MonoBehaviour
 
     public void ConcludeAssault(bool wasSuccessful)
     {
+        int occupiedCount = 0;
+
+        for (int i = 0; i < RegionManager.Instance.GetAllRegions().Length; i++)
+        {
+            if (RegionManager.Instance.GetRegion(i).IsRegionOccupied())
+            {
+                occupiedCount += 1;
+            }
+        }
+        CountCounterAnimation.Instance.InitializeCounter(occupiedCount);
+
         if (wasSuccessful)
         {
             RegionManager.Instance.GetRegion(targetRegion).ChangeRegionStatus(false);
             PopUpHandler.Instance.SpawnPopup("Count Down!", GetRegionTransform(targetRegion).position);
+            CountCounterAnimation.Instance.TickDown();
         }
         targetRegion = -1;
     }
