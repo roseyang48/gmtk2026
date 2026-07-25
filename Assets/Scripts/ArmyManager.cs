@@ -40,6 +40,17 @@ public class ArmyManager : MonoBehaviour
     [SerializeField]
     Army army;
 
+    Dictionary<string, bool> combatFlags = new Dictionary<string, bool>()
+    {
+        {"infantryUnlocked", false},
+        {"rangedUnlocked", false},
+        {"cavalryUnlocked", false},
+        {"peasantUpgraded0", false},
+        {"infantryUpgraded0", false},
+        {"rangedUpgraded0", false},
+        {"cavalryUpgraded0", false},
+    };
+
     int baseUnitCapacity = 10;
 
     void Awake()
@@ -160,28 +171,16 @@ public class ArmyManager : MonoBehaviour
 
     public bool CanBuildUnitType(UnitType unitType)
     {
-        if (unitType == UnitType.PEASANT) { return true; }
-
-        Building[] buildings = GameManager.Instance.GetConstructedBuildings(false);
-        for (int i = 0; i < buildings.Length; i++)
+        switch (unitType)
         {
-            if (buildings[i] != null)
-            {
-                switch (unitType)
-                {
-                    case UnitType.PEASANT:
-                        return true;
-                    case UnitType.INFANTRY:
-                        if (buildings[i].IsInfantryUnlocker()) { return true; }
-                        break;
-                    case UnitType.RANGED:
-                        if (buildings[i].IsRangedUnlocker()) { return true; }
-                        break;
-                    case UnitType.CAVALRY:
-                        if (buildings[i].IsCavalryUnlocker()) { return true; }
-                        break;
-                }
-            }
+            case UnitType.PEASANT:
+                return true;
+            case UnitType.INFANTRY:
+                return CheckCombatFlag("infantryUnlocked");
+            case UnitType.RANGED:
+                return CheckCombatFlag("rangedUnlocked");
+            case UnitType.CAVALRY:
+                return CheckCombatFlag("cavalryUnlocked");
         }
 
         return false;
@@ -236,5 +235,15 @@ public class ArmyManager : MonoBehaviour
                 Debug.Break();
                 break;
         }
+    }
+
+    public void SetCombatFlag(string key, bool value)
+    {
+        combatFlags[key] = value;
+    }
+
+    public bool CheckCombatFlag(string key)
+    {
+        return combatFlags[key];
     }
 }
