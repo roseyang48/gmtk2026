@@ -249,9 +249,8 @@ public class RegionUIController : MonoBehaviour
 
         if (building.IsTech())
         {
-            // TUNE THIS DOWN
-            goldCost *= 1 + GameManager.Instance.GetTechBuildingsBuilt();
-            woodCost *= 1 + GameManager.Instance.GetTechBuildingsBuilt();
+            goldCost = Mathf.FloorToInt(goldCost * Mathf.Pow(GameManager.Instance.GetTechBuildingCostMod(), GameManager.Instance.GetTechBuildingsBuilt()));
+            woodCost = Mathf.FloorToInt(woodCost * Mathf.Pow(GameManager.Instance.GetTechBuildingCostMod(), GameManager.Instance.GetTechBuildingsBuilt()));
         }
 
         buildingName.text = building.GetBuildingName();

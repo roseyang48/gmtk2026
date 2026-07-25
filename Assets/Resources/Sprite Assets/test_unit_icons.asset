@@ -82,24 +82,24 @@ MonoBehaviour:
   m_SpriteCharacterTable:
   - m_ElementType: 2
     m_Unicode: 65534
-    m_GlyphIndex: 0
-    m_Scale: 1
-    m_Name: test_unit_icons_ranged
-  - m_ElementType: 2
-    m_Unicode: 65534
     m_GlyphIndex: 1
     m_Scale: 1
     m_Name: test_unit_icons_peasant
   - m_ElementType: 2
     m_Unicode: 65534
-    m_GlyphIndex: 2
-    m_Scale: 1
-    m_Name: test_unit_icons_cavalry
-  - m_ElementType: 2
-    m_Unicode: 65534
     m_GlyphIndex: 3
     m_Scale: 1
     m_Name: test_unit_icons_infantry
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 0
+    m_Scale: 1
+    m_Name: test_unit_icons_ranged
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 2
+    m_Scale: 1
+    m_Name: test_unit_icons_cavalry
   m_GlyphTable:
   - m_Index: 0
     m_Metrics:

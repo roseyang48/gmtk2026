@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     public bool onUnitScreen;
 
     int techBuildingsBuilt = 0;
+    float techBuildingCostMod = 1.25f;
 
     public static GameManager Instance;
 
@@ -220,22 +221,22 @@ public class GameManager : MonoBehaviour
         int cavalryUpkeep = ArmyManager.Instance.GetFoodUpkeep(ArmyManager.UnitType.CAVALRY);
         if(peasantUpkeep > 0)
         {
-            PopUpHandler.Instance.SpawnPopup(ArmyManager.Instance.GetArmy().peasantCount + "x Peasants: -" + peasantUpkeep + " Food!", armyPopupTransform.position);
+            PopUpHandler.Instance.SpawnPopup(ArmyManager.Instance.GetArmy().peasantCount + "x <sprite=\"test_unit_icons\" index=0>: -" + peasantUpkeep + " Food!", armyPopupTransform.position);
             yield return new WaitForSeconds(0.5f);
         }
         if(infantryUpkeep > 0)
         {
-            PopUpHandler.Instance.SpawnPopup(ArmyManager.Instance.GetArmy().infantryCount + "x Infantry: -" + infantryUpkeep + " Food!", armyPopupTransform.position);
+            PopUpHandler.Instance.SpawnPopup(ArmyManager.Instance.GetArmy().infantryCount + "x <sprite=\"test_unit_icons\" index=1>: -" + infantryUpkeep + " Food!", armyPopupTransform.position);
             yield return new WaitForSeconds(0.5f);
         }
         if(rangedUpkeep > 0)
         {
-            PopUpHandler.Instance.SpawnPopup(ArmyManager.Instance.GetArmy().rangedCount + "x Musketeers: -" + rangedUpkeep + " Food!", armyPopupTransform.position);
+            PopUpHandler.Instance.SpawnPopup(ArmyManager.Instance.GetArmy().rangedCount + "x <sprite=\"test_unit_icons\" index=2>: -" + rangedUpkeep + " Food!", armyPopupTransform.position);
             yield return new WaitForSeconds(0.5f);
         }
         if(cavalryUpkeep > 0)
         {
-            PopUpHandler.Instance.SpawnPopup(ArmyManager.Instance.GetArmy().cavalryCount + "x Cavalry: -" + cavalryUpkeep + " Food!", armyPopupTransform.position);
+            PopUpHandler.Instance.SpawnPopup(ArmyManager.Instance.GetArmy().cavalryCount + "x <sprite=\"test_unit_icons\" index=3>: -" + cavalryUpkeep + " Food!", armyPopupTransform.position);
             yield return new WaitForSeconds(0.5f);
         }
     } 
@@ -382,5 +383,10 @@ public class GameManager : MonoBehaviour
     public void IncrementTechBuildingCount()
     {
         techBuildingsBuilt++;
+    }
+
+    public float GetTechBuildingCostMod()
+    {
+        return techBuildingCostMod;
     }
 }
