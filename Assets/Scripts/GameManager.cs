@@ -194,17 +194,17 @@ public class GameManager : MonoBehaviour
     {
         if(gold != 0)
         {
-            PopUpHandler.Instance.SpawnPopup((gold > 0 ? "+" : "-") + gold + " Gold!", GetRegionTransform(regionNumber).position);
+            PopUpHandler.Instance.SpawnPopup((gold > 0 ? "+" : "-") + gold + " <sprite=\"final_icons\" index=4>!", GetRegionTransform(regionNumber).position);
             yield return new WaitForSeconds(0.5f);
         }
         if(food != 0)
         {
-            PopUpHandler.Instance.SpawnPopup((food > 0 ? "+" : "-") + food + " Food!", GetRegionTransform(regionNumber).position);
+            PopUpHandler.Instance.SpawnPopup((food > 0 ? "+" : "-") + food + " <sprite=\"final_icons\" index=6>!", GetRegionTransform(regionNumber).position);
             yield return new WaitForSeconds(0.5f);
         }
         if(wood != 0)
         {
-            PopUpHandler.Instance.SpawnPopup((wood > 0 ? "+" : "-") + wood + " Wood!", GetRegionTransform(regionNumber).position);
+            PopUpHandler.Instance.SpawnPopup((wood > 0 ? "+" : "-") + wood + " <sprite=\"final_icons\" index=7>!", GetRegionTransform(regionNumber).position);
             yield return new WaitForSeconds(0.5f);
         }
     }
@@ -221,22 +221,22 @@ public class GameManager : MonoBehaviour
         int cavalryUpkeep = ArmyManager.Instance.GetFoodUpkeep(ArmyManager.UnitType.CAVALRY);
         if(peasantUpkeep > 0)
         {
-            PopUpHandler.Instance.SpawnPopup(ArmyManager.Instance.GetArmy().peasantCount + "x <sprite=\"test_unit_icons\" index=0>: -" + peasantUpkeep + " Food!", armyPopupTransform.position);
+            PopUpHandler.Instance.SpawnPopup(ArmyManager.Instance.GetArmy().peasantCount + "x <sprite=\"final_icons\" index=0>: -" + peasantUpkeep + " <sprite=\"final_icons\" index=6>!", armyPopupTransform.position);
             yield return new WaitForSeconds(0.5f);
         }
         if(infantryUpkeep > 0)
         {
-            PopUpHandler.Instance.SpawnPopup(ArmyManager.Instance.GetArmy().infantryCount + "x <sprite=\"test_unit_icons\" index=1>: -" + infantryUpkeep + " Food!", armyPopupTransform.position);
+            PopUpHandler.Instance.SpawnPopup(ArmyManager.Instance.GetArmy().infantryCount + "x <sprite=\"final_icons\" index=1>: -" + infantryUpkeep + " <sprite=\"final_icons\" index=6>!", armyPopupTransform.position);
             yield return new WaitForSeconds(0.5f);
         }
         if(rangedUpkeep > 0)
         {
-            PopUpHandler.Instance.SpawnPopup(ArmyManager.Instance.GetArmy().rangedCount + "x <sprite=\"test_unit_icons\" index=2>: -" + rangedUpkeep + " Food!", armyPopupTransform.position);
+            PopUpHandler.Instance.SpawnPopup(ArmyManager.Instance.GetArmy().rangedCount + "x <sprite=\"final_icons\" index=2>: -" + rangedUpkeep + " <sprite=\"final_icons\" index=6>!", armyPopupTransform.position);
             yield return new WaitForSeconds(0.5f);
         }
         if(cavalryUpkeep > 0)
         {
-            PopUpHandler.Instance.SpawnPopup(ArmyManager.Instance.GetArmy().cavalryCount + "x <sprite=\"test_unit_icons\" index=3>: -" + cavalryUpkeep + " Food!", armyPopupTransform.position);
+            PopUpHandler.Instance.SpawnPopup(ArmyManager.Instance.GetArmy().cavalryCount + "x <sprite=\"final_icons\" index=3>: -" + cavalryUpkeep + " <sprite=\"final_icons\" index=6>!", armyPopupTransform.position);
             yield return new WaitForSeconds(0.5f);
         }
     } 
