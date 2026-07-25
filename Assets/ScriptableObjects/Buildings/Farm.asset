@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingName: Farm
   buildingDescription: Produces 20 Food per turn.
-  woodCost: 25
+  woodCost: 50
   goldCost: 25
   goldUpkeep: 5
   goldIncome: 0
