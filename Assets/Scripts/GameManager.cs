@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
 
+    [SerializeField] private Transform armyPopupTransform;
     void Awake()
     {
         if (Instance != null)
@@ -207,15 +208,53 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void UnitUpkeepPopups()
+    {
+        StartCoroutine(SpawnSequentialUnitPopups());
+    }
+    private IEnumerator SpawnSequentialUnitPopups()
+    {
+        int peasantUpkeep = ArmyManager.Instance.GetFoodUpkeep(ArmyManager.UnitType.PEASANT);
+        int infantryUpkeep = ArmyManager.Instance.GetFoodUpkeep(ArmyManager.UnitType.INFANTRY);
+        int rangedUpkeep = ArmyManager.Instance.GetFoodUpkeep(ArmyManager.UnitType.RANGED);
+        int cavalryUpkeep = ArmyManager.Instance.GetFoodUpkeep(ArmyManager.UnitType.CAVALRY);
+        if(peasantUpkeep > 0)
+        {
+            PopUpHandler.Instance.SpawnPopup(ArmyManager.Instance.GetArmy().peasantCount + "x Peasants: -" + peasantUpkeep + " Food!", armyPopupTransform.position);
+            yield return new WaitForSeconds(0.5f);
+        }
+        if(infantryUpkeep > 0)
+        {
+            PopUpHandler.Instance.SpawnPopup(ArmyManager.Instance.GetArmy().infantryCount + "x Infantry: -" + infantryUpkeep + " Food!", armyPopupTransform.position);
+            yield return new WaitForSeconds(0.5f);
+        }
+        if(rangedUpkeep > 0)
+        {
+            PopUpHandler.Instance.SpawnPopup(ArmyManager.Instance.GetArmy().rangedCount + "x Musketeers: -" + rangedUpkeep + " Food!", armyPopupTransform.position);
+            yield return new WaitForSeconds(0.5f);
+        }
+        if(cavalryUpkeep > 0)
+        {
+            PopUpHandler.Instance.SpawnPopup(ArmyManager.Instance.GetArmy().cavalryCount + "x Cavalry: -" + cavalryUpkeep + " Food!", armyPopupTransform.position);
+            yield return new WaitForSeconds(0.5f);
+        }
+    } 
+
     public void AdvanceTurn()
     {
         unitBuildController.HideCanvas();
         regionUIController.HideCanvas();
 
+        TransitionHandler.Instance.Transition();
+    }
+
+    public void StartNewTurn()
+    {
         turnCount += 1;
 
         int[] upkeep = ComputeUpkeep();
         RegionIncomePopups();
+        UnitUpkeepPopups();
         if (upkeep[0] > 0)
         {
             ResourceManager.Instance.GainResource(ResourceManager.ResourceType.GOLD, upkeep[0]);
