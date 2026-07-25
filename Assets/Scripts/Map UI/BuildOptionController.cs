@@ -30,4 +30,9 @@ public class BuildOptionController : MonoBehaviour
     {
         GameManager.Instance.BuildingOptionSelected(buildingOption);
     }
+
+    public Building GetBuildingOption()
+    {
+        return buildingOption;
+    }
 }

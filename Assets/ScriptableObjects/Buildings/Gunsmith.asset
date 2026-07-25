@@ -14,13 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingName: Gunsmith
   buildingDescription: Unlocks access to Musketeers.
-  woodCost: 175
-  goldCost: 75
-  goldUpkeep: 10
+  woodCost: 50
+  goldCost: 150
+  goldUpkeep: 15
   goldIncome: 0
   foodIncome: 0
   woodIncome: 0
   unitCapacityBonus: 0
-  isInfantryUnlocker: 0
-  isRangedUnlocker: 1
-  isCavalryUnlocker: 0
+  isUnique: 1
+  isTech: 1
+  armyFlags:
+  - rangedUnlocked
+  prereqFlags: []

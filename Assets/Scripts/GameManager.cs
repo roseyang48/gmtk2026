@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     bool hasAttacked = false;
     public bool onUnitScreen;
 
+    int techBuildingsBuilt = 0;
+
     public static GameManager Instance;
 
     void Awake()
@@ -329,5 +331,15 @@ public class GameManager : MonoBehaviour
     public Transform GetRegionTransform(int regionNumber)
     {
         return GameObject.Find("GameMap/"+regionObjectNames[regionNumber]).transform;
+    }
+
+    public int GetTechBuildingsBuilt()
+    {
+        return techBuildingsBuilt;
+    }
+
+    public void IncrementTechBuildingCount()
+    {
+        techBuildingsBuilt++;
     }
 }

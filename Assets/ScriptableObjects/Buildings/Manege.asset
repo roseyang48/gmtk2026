@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfd51f399e839416ab6de21600af4c19, type: 3}
-  m_Name: Blacksmith
+  m_Name: Manege
   m_EditorClassIdentifier: Assembly-CSharp::Building
-  buildingName: Blacksmith
-  buildingDescription: Unlocks access to Infantry.
-  woodCost: 100
+  buildingName: "Maneg\xE9"
+  buildingDescription: Cavalry units charge more frequently and deal more damage
+    when charging.
+  woodCost: 150
   goldCost: 100
-  goldUpkeep: 15
+  goldUpkeep: 25
   goldIncome: 0
   foodIncome: 0
   woodIncome: 0
@@ -24,5 +25,6 @@ MonoBehaviour:
   isUnique: 1
   isTech: 1
   armyFlags:
-  - infantryUnlocked
-  prereqFlags: []
+  - cavalryUpgrade0
+  prereqFlags:
+  - cavalryUnlocked

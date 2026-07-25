@@ -48,6 +48,12 @@ public class RegionUIController : MonoBehaviour
     TextMeshProUGUI buildingWoodCost;
 
     [SerializeField]
+    TextMeshProUGUI buildingUpkeep;
+
+    [SerializeField]
+    TextMeshProUGUI buildingTags;
+
+    [SerializeField]
     Button confirmButton;
 
 
@@ -63,6 +69,9 @@ public class RegionUIController : MonoBehaviour
 
     [SerializeField]
     TextMeshProUGUI regionFoodText;
+
+    [SerializeField]
+    BuildOptionController[] buildOptionControllers;
 
     int activeBuildingSlot;
     Building selectedBuilding;
@@ -165,6 +174,46 @@ public class RegionUIController : MonoBehaviour
         activeBuildingSlot = buildingSlot;
 
         DrawBuildingInfo(null);
+
+        foreach (BuildOptionController buildOption in buildOptionControllers)
+        {
+            bool missingPrereqs = false;
+
+            foreach (string flag in buildOption.GetBuildingOption().GetPrereqFlags())
+            {
+                Debug.Log(ArmyManager.Instance.CheckCombatFlag(flag));
+                if (!ArmyManager.Instance.CheckCombatFlag(flag))
+                {
+                    missingPrereqs = true;
+                    break;
+                }
+            }
+
+            if (missingPrereqs)
+            {
+                Debug.Log("missing");
+                buildOption.gameObject.SetActive(false);
+                continue;
+            }
+
+            if (buildOption.GetBuildingOption().IsUnique())
+            {
+                bool validBuild = true;
+                foreach (string flag in buildOption.GetBuildingOption().GetArmyFlags())
+                {
+                    if (ArmyManager.Instance.CheckCombatFlag(flag))
+                    {
+                        validBuild = false;
+                        break;
+                    }
+                }
+                buildOption.gameObject.SetActive(validBuild);
+            }
+            else
+            {
+                buildOption.gameObject.SetActive(true);
+            }
+        }
     }
 
     public void HideBuildMenu()
@@ -195,12 +244,25 @@ public class RegionUIController : MonoBehaviour
 
         selectedBuilding = building;
 
+        int goldCost = building.GetGoldCost();
+        int woodCost = building.GetWoodCost();
+
+        if (building.IsTech())
+        {
+            // TUNE THIS DOWN
+            goldCost *= 1 + GameManager.Instance.GetTechBuildingsBuilt();
+            woodCost *= 1 + GameManager.Instance.GetTechBuildingsBuilt();
+        }
+
         buildingName.text = building.GetBuildingName();
         buildingDescription.text = building.GetBuildingDescription();
-        buildingGoldCost.text = building.GetGoldCost() + " Gold";
-        buildingWoodCost.text = building.GetWoodCost() + " Wood";
+        buildingGoldCost.text = goldCost + " Gold";
+        buildingWoodCost.text = woodCost + " Wood";
+        buildingUpkeep.text = building.GetGoldUpkeep() + " Gold";
+        string tags = (building.IsTech() ? "Tech" : "") + (building.IsTech() && building.IsUnique() ? ", " : "") + (building.IsUnique() ? "Unique" : "");
+        buildingTags.text = tags;
 
-        if (building.GetGoldCost() > ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.GOLD) || building.GetWoodCost() > ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.WOOD))
+        if (goldCost > ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.GOLD) || woodCost > ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.WOOD))
         {
             confirmButton.interactable = false;
         }//Can add more conditionals here
@@ -216,6 +278,16 @@ public class RegionUIController : MonoBehaviour
 
         ResourceManager.Instance.SpendResource(ResourceManager.ResourceType.GOLD, selectedBuilding.GetGoldCost());
         ResourceManager.Instance.SpendResource(ResourceManager.ResourceType.WOOD, selectedBuilding.GetWoodCost());
+
+        foreach (string flag in selectedBuilding.GetArmyFlags())
+        {
+            ArmyManager.Instance.SetCombatFlag(flag, true);
+        }
+
+        if (selectedBuilding.IsTech())
+        {
+            GameManager.Instance.IncrementTechBuildingCount();
+        }
 
         HideBuildMenu();
         RedrawBuildings();

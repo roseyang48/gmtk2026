@@ -79,26 +79,34 @@ public class Building : ScriptableObject
     }
 
     [SerializeField]
-    bool isInfantryUnlocker;
+    bool isUnique;
 
-    public bool IsInfantryUnlocker()
+    public bool IsUnique()
     {
-        return isInfantryUnlocker;
+        return isUnique;
     }
 
     [SerializeField]
-    bool isRangedUnlocker;
+    bool isTech;
 
-    public bool IsRangedUnlocker()
+    public bool IsTech()
     {
-        return isRangedUnlocker;
+        return isTech;
     }
 
     [SerializeField]
-    bool isCavalryUnlocker;
+    string[] armyFlags;
 
-    public bool IsCavalryUnlocker()
+    public string[] GetArmyFlags()
     {
-        return isCavalryUnlocker;
+        return armyFlags;
+    }
+
+    [SerializeField]
+    string[] prereqFlags;
+
+    public string[] GetPrereqFlags()
+    {
+        return prereqFlags;
     }
 }
