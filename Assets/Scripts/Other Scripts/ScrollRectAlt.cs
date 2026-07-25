@@ -12,6 +12,8 @@ public class ScrollRectAlt : ScrollRect, IPointerEnterHandler, IPointerExitHandl
 
     InputAction scroll;
 
+    private float scrollModifier = 2f;
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         isMouseOver = true;
@@ -54,9 +56,9 @@ public class ScrollRectAlt : ScrollRect, IPointerEnterHandler, IPointerExitHandl
         {
             // Amplify the mousewheel so that it matches the scroll sensitivity.
             if (data.scrollDelta.y < -Mathf.Epsilon)
-                data.scrollDelta = new Vector2(0f, -scrollSensitivity);
+                data.scrollDelta = new Vector2(0f, -scrollSensitivity) * scrollModifier;
             else if (data.scrollDelta.y > Mathf.Epsilon)
-                data.scrollDelta = new Vector2(0f, scrollSensitivity);
+                data.scrollDelta = new Vector2(0f, scrollSensitivity) * scrollModifier;
 
             base.OnScroll(data);
         }
