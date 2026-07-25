@@ -31,7 +31,7 @@ public class ArmyManager : MonoBehaviour
 
     Dictionary<UnitType, int> buildCostFood = new Dictionary<UnitType, int>()
     {
-        {UnitType.PEASANT, 50},
+        {UnitType.PEASANT, 25},
         {UnitType.INFANTRY, 75},
         {UnitType.RANGED, 50},
         {UnitType.CAVALRY, 75},

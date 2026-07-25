@@ -35,6 +35,7 @@ public class BuildingButtonController : MonoBehaviour
         if (building == null)
         {
             buildingName.text = "Empty";
+            GetComponent<Button>().interactable = true;
         }
         else
         {
