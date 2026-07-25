@@ -23,6 +23,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _BorderSubGraph_3a2f5890337d44f2b1c1f4ba9aaa1499_InputTex_4202780493_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 70be054f6d04945b6afd3bd704e5de86, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 70be054f6d04945b6afd3bd704e5de86, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -42,6 +46,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Intensity: 0.025
+    - _Smoothing: 0.1
     m_Colors:
     - White: {r: 1, g: 1, b: 1, a: 1}
     - _ColorEffect: {r: 1, g: 0, b: 0, a: 1}
