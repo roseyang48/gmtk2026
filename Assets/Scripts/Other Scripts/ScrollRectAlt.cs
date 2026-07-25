@@ -12,7 +12,7 @@ public class ScrollRectAlt : ScrollRect, IPointerEnterHandler, IPointerExitHandl
 
     InputAction scroll;
 
-    private float scrollModifier = 2f;
+    private float scrollModifier = 10f;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
