@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuildOptionController : MonoBehaviour
 {
@@ -7,6 +8,9 @@ public class BuildOptionController : MonoBehaviour
 
     [SerializeField]
     TMPro.TextMeshProUGUI buildingName;
+
+    [SerializeField]
+    Image buildingIcon;
 
     [SerializeField]
     TMPro.TextMeshProUGUI buildingGoldCost;
@@ -18,6 +22,7 @@ public class BuildOptionController : MonoBehaviour
     void Start()
     {
         buildingName.text = buildingOption.GetBuildingName();
+        buildingIcon.sprite = buildingOption.GetBuildingIcon();
     }
 
     // Update is called once per frame

@@ -35,11 +35,13 @@ public class BuildingButtonController : MonoBehaviour
         if (building == null)
         {
             buildingName.text = "Empty";
+            buildingIcon.sprite = null;
             GetComponent<Button>().interactable = true;
         }
         else
         {
             buildingName.text = building.GetBuildingName();
+            buildingIcon.sprite = building.GetBuildingIcon();
             GetComponent<Button>().interactable = false;
         }
     }

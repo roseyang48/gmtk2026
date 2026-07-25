@@ -264,6 +264,11 @@ public class GameManager : MonoBehaviour
         unitBuildController.HideCanvas();
         regionUIController.HideCanvas();
 
+        foreach (RegionController region in regionControllers)
+        {
+            region.HideSelectSprite();
+        }
+
         TransitionHandler.Instance.Transition();
     }
 

@@ -13,6 +13,14 @@ public class Building : ScriptableObject
     }
 
     [SerializeField]
+    Sprite buildingIcon;
+
+    public Sprite GetBuildingIcon()
+    {
+        return buildingIcon;
+    }
+
+    [SerializeField]
     [TextArea(4, 100)]
     string buildingDescription;
 
