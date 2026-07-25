@@ -192,19 +192,19 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator SpawnSequentialPopups(int gold, int food, int wood, int regionNumber)
     {
-        if(gold > 0)
+        if(gold != 0)
         {
-            PopUpHandler.Instance.SpawnPopup("+" + gold + " Gold!", GetRegionTransform(regionNumber).position);
+            PopUpHandler.Instance.SpawnPopup((gold > 0 ? "+" : "-") + gold + " Gold!", GetRegionTransform(regionNumber).position);
             yield return new WaitForSeconds(0.5f);
         }
-        if(food > 0)
+        if(food != 0)
         {
-            PopUpHandler.Instance.SpawnPopup("+" + food + " Food!", GetRegionTransform(regionNumber).position);
+            PopUpHandler.Instance.SpawnPopup((gold > 0 ? "+" : "-") + food + " Food!", GetRegionTransform(regionNumber).position);
             yield return new WaitForSeconds(0.5f);
         }
-        if(wood > 0)
+        if(wood != 0)
         {
-            PopUpHandler.Instance.SpawnPopup("+" + wood + " Wood!", GetRegionTransform(regionNumber).position);
+            PopUpHandler.Instance.SpawnPopup((gold > 0 ? "+" : "-") + wood + " Wood!", GetRegionTransform(regionNumber).position);
             yield return new WaitForSeconds(0.5f);
         }
     }
