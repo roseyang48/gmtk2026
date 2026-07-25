@@ -30,7 +30,7 @@ public class RegionManager : MonoBehaviour
         for (int i = 0; i < regionInitializers.Length; i++)
         {
             RegionInitializer initializer = regionInitializers[i];
-            Region newRegion = new Region(initializer.regionNumber, initializer.regionName, initializer.isRegionOccupied, initializer.regionIncome, initializer.regionFood, initializer.buildingSlots, initializer.regionArmy);
+            Region newRegion = new Region(initializer.regionNumber, initializer.regionName, initializer.isRegionOccupied, initializer.regionIncome, initializer.regionFood, initializer.buildingSlots, initializer.regionArmy, initializer.hasViscount);
 
             regions[i] = newRegion;
         }

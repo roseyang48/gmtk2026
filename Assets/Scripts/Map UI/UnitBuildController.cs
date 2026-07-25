@@ -88,7 +88,7 @@ public class UnitBuildController : MonoBehaviour
         peasantCapacityText.text = ArmyManager.Instance.GetUnitCount(ArmyManager.UnitType.PEASANT).ToString();
         peasantBuildButton.interactable = canBuildPeasant;
         peasantBuildTextMain.text = canBuildPeasant ? "Recruit" : "Unavailable";
-        peasantBuildTextSecondary.text = ArmyManager.Instance.GetGoldBuildCost(ArmyManager.UnitType.PEASANT) + " <sprite=\"final_icons\" index=4>, " + ArmyManager.Instance.GetFoodBuildCost(ArmyManager.UnitType.PEASANT) + " <sprite=\"final_icons\" index=6>";
+        peasantBuildTextSecondary.text = ArmyManager.Instance.GetGoldBuildCost(ArmyManager.UnitType.PEASANT) + " <sprite=\"final_icons\" index=4>, " + ArmyManager.Instance.GetFoodBuildCost(ArmyManager.UnitType.PEASANT) + " <sprite=\"final_icons\" index=5>";
 
         bool canBuildInfantry = ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.FOOD) >= ArmyManager.Instance.GetFoodBuildCost(ArmyManager.UnitType.INFANTRY)
             && ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.GOLD) >= ArmyManager.Instance.GetGoldBuildCost(ArmyManager.UnitType.INFANTRY)
@@ -105,7 +105,7 @@ public class UnitBuildController : MonoBehaviour
         {
             infantryBuildTextMain.text = "Requres Blacksmith";
         }
-        infantryBuildTextSecondary.text = ArmyManager.Instance.GetGoldBuildCost(ArmyManager.UnitType.INFANTRY) + " <sprite=\"final_icons\" index=4>, " + ArmyManager.Instance.GetFoodBuildCost(ArmyManager.UnitType.INFANTRY) + " <sprite=\"final_icons\" index=6>, 1 <sprite=\"final_icons\" index=0>";
+        infantryBuildTextSecondary.text = ArmyManager.Instance.GetGoldBuildCost(ArmyManager.UnitType.INFANTRY) + " <sprite=\"final_icons\" index=4>, " + ArmyManager.Instance.GetFoodBuildCost(ArmyManager.UnitType.INFANTRY) + " <sprite=\"final_icons\" index=5>, 1 <sprite=\"final_icons\" index=0>";
 
         bool canBuildRanged = ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.FOOD) >= ArmyManager.Instance.GetFoodBuildCost(ArmyManager.UnitType.RANGED)
             && ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.GOLD) >= ArmyManager.Instance.GetGoldBuildCost(ArmyManager.UnitType.RANGED)
@@ -122,7 +122,7 @@ public class UnitBuildController : MonoBehaviour
         {
             rangedBuildTextMain.text = "Requires Gunsmith";
         }
-        rangedBuildTextSecondary.text = ArmyManager.Instance.GetGoldBuildCost(ArmyManager.UnitType.RANGED) + " <sprite=\"final_icons\" index=4>, " + ArmyManager.Instance.GetFoodBuildCost(ArmyManager.UnitType.RANGED) + " <sprite=\"final_icons\" index=6>, 1 <sprite=\"final_icons\" index=0>";
+        rangedBuildTextSecondary.text = ArmyManager.Instance.GetGoldBuildCost(ArmyManager.UnitType.RANGED) + " <sprite=\"final_icons\" index=4>, " + ArmyManager.Instance.GetFoodBuildCost(ArmyManager.UnitType.RANGED) + " <sprite=\"final_icons\" index=5>, 1 <sprite=\"final_icons\" index=0>";
 
         bool canBuildCavalry = ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.FOOD) >= ArmyManager.Instance.GetFoodBuildCost(ArmyManager.UnitType.CAVALRY)
             && ResourceManager.Instance.GetResourceCount(ResourceManager.ResourceType.GOLD) >= ArmyManager.Instance.GetGoldBuildCost(ArmyManager.UnitType.CAVALRY)
@@ -139,7 +139,7 @@ public class UnitBuildController : MonoBehaviour
         {
             cavalryBuildTextMain.text = "Requires Stables";
         }
-        cavalryBuildTextSecondary.text = ArmyManager.Instance.GetGoldBuildCost(ArmyManager.UnitType.CAVALRY) + " <sprite=\"final_icons\" index=4>, " + ArmyManager.Instance.GetFoodBuildCost(ArmyManager.UnitType.CAVALRY) + " <sprite=\"final_icons\" index=6>, 1 <sprite=\"final_icons\" index=0>";
+        cavalryBuildTextSecondary.text = ArmyManager.Instance.GetGoldBuildCost(ArmyManager.UnitType.CAVALRY) + " <sprite=\"final_icons\" index=4>, " + ArmyManager.Instance.GetFoodBuildCost(ArmyManager.UnitType.CAVALRY) + " <sprite=\"final_icons\" index=5>, 1 <sprite=\"final_icons\" index=0>";
 
     }
 

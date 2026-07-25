@@ -23,4 +23,5 @@ MonoBehaviour:
     infantryCount: 0
     rangedCount: 0
     cavalryCount: 12
+  hasViscount: 1
   neighborRegions: 040000000a0000000c0000000d000000

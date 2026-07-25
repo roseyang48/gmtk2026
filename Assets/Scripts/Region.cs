@@ -29,7 +29,10 @@ public class Region
     [SerializeField]
     Army regionArmy;
 
-    public Region(int regionNumber, string regionName, bool isRegionOccupied, int regionIncome, int regionFood, int buildingSlots, Army regionArmy)
+    [SerializeField]
+    bool hasViscount;
+
+    public Region(int regionNumber, string regionName, bool isRegionOccupied, int regionIncome, int regionFood, int buildingSlots, Army regionArmy, bool hasViscount)
     {
         this.regionNumber = regionNumber;
         this.regionName = regionName;
@@ -39,6 +42,7 @@ public class Region
         this.buildingSlots = buildingSlots;
         constructedBuildings = new Building[buildingSlots];
         this.regionArmy = regionArmy;
+        this.hasViscount = hasViscount;
     }
 
     public void SetRegionNeighbors(Region[] neighborRegions)
@@ -89,6 +93,11 @@ public class Region
     public Army GetRegionArmy()
     {
         return regionArmy;
+    }
+
+    public bool HasViscount()
+    {
+        return hasViscount;
     }
 
     public void ChangeRegionStatus(bool isOccupied)

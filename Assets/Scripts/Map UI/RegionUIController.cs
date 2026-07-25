@@ -100,7 +100,7 @@ public class RegionUIController : MonoBehaviour
         armyTransform.gameObject.SetActive(region.IsRegionOccupied());
 
         regionNameLabel.text = region.GetRegionName();
-        occupationLabel.text = region.IsRegionOccupied() ? "OCCUPIED" : "LIBERATED";
+        occupationLabel.text = region.IsRegionOccupied() ? "OCCUPIED BY " + (region.HasViscount() ? "VISCOUNT" : "COUNT") : "LIBERATED";
 
         bool neighborLiberated = false;
 
@@ -145,7 +145,7 @@ public class RegionUIController : MonoBehaviour
         }
 
         regionGoldText.text = "<sprite=\"final_icons\" index=4>: " + region.GetRegionIncome();
-        regionFoodText.text = "<sprite=\"final_icons\" index=6>: " + region.GetRegionFood();
+        regionFoodText.text = "<sprite=\"final_icons\" index=5>: " + region.GetRegionFood();
 
         activeRegion = region;
 

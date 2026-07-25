@@ -11,6 +11,7 @@ class RegionInitializer : ScriptableObject
     public int regionFood;
     public int buildingSlots;
     public Army regionArmy;
+    public bool hasViscount;
 
     public int[] neighborRegions;
 }
