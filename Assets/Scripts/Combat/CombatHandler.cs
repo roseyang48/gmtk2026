@@ -25,6 +25,7 @@ public class CombatHandler : MonoBehaviour
     [SerializeField] private TMP_Text cavalryCountText;
     [SerializeField] private Animator endMenuAnimator;
     [SerializeField] private float vanishTime;
+    [SerializeField] private GameObject[] maps;
     
     bool playerWon = false;
 
@@ -41,6 +42,7 @@ public class CombatHandler : MonoBehaviour
     }
     public void Initialize(Army playerArmy, Army enemyArmy)
     {
+        Instantiate(maps[Random.Range(0, maps.Length - 1)], Vector2.zero, Quaternion.identity);
         StartCoroutine("SpawnPlayerArmy", playerArmy);
         StartCoroutine("SpawnEnemyArmy", enemyArmy);
     }
