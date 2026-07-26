@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Blacksmith
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingName: Blacksmith
-  buildingIcon: {fileID: 21300000, guid: 76e192d0099ca4c5ca4d89a17c40bd9c, type: 3}
+  buildingIcon: {fileID: 21300000, guid: 0a08ca6cb665344d9910c18848f0c3a6, type: 3}
   buildingDescription: Unlocks access to <sprite="final_icons" index=1>.
   woodCost: 100
   goldCost: 100

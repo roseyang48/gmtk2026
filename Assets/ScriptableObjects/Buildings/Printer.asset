@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Printer
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingName: Printer
-  buildingIcon: {fileID: 21300000, guid: 76e192d0099ca4c5ca4d89a17c40bd9c, type: 3}
+  buildingIcon: {fileID: 21300000, guid: ca56256f6a4104843a1b33427915eb93, type: 3}
   buildingDescription: <sprite="final_icons" index=0> no longer flee. Instead, they
     gain attack speed and resistance at lower health.
   woodCost: 125

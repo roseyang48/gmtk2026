@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Steelworks
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingName: Steelworks
-  buildingIcon: {fileID: 21300000, guid: 76e192d0099ca4c5ca4d89a17c40bd9c, type: 3}
+  buildingIcon: {fileID: 21300000, guid: 5cd6a7cf7acb34d7299b7e55127992f4, type: 3}
   buildingDescription: <sprite="final_icons" index=1> units take slightly reduced
     damage from all sources.
   woodCost: 100

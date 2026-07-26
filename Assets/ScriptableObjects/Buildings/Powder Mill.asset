@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Powder Mill
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingName: Powder Mill
-  buildingIcon: {fileID: 21300000, guid: 76e192d0099ca4c5ca4d89a17c40bd9c, type: 3}
+  buildingIcon: {fileID: 21300000, guid: 52eb9f7d851904ed59d84b97b5f41dff, type: 3}
   buildingDescription: <sprite="final_icons" index=2> gain increased attack range
     and damage.
   woodCost: 50

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Market
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingName: Market
-  buildingIcon: {fileID: 21300000, guid: 76e192d0099ca4c5ca4d89a17c40bd9c, type: 3}
+  buildingIcon: {fileID: 21300000, guid: b107b8a11d293426abb0615e33ef03c0, type: 3}
   buildingDescription: Produces 25 <sprite="final_icons" index=4> per turn.
   woodCost: 100
   goldCost: 0

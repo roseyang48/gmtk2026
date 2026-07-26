@@ -12,6 +12,8 @@ public class BuildingButtonController : MonoBehaviour
     [SerializeField]
     TMPro.TextMeshProUGUI buildingName;
 
+    [SerializeField]
+    Sprite emptySprite;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -35,7 +37,7 @@ public class BuildingButtonController : MonoBehaviour
         if (building == null)
         {
             buildingName.text = "Empty";
-            buildingIcon.sprite = null;
+            buildingIcon.sprite = emptySprite;
             GetComponent<Button>().interactable = true;
         }
         else

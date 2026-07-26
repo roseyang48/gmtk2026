@@ -290,6 +290,7 @@ MonoBehaviour:
   buildingIndex: -1
   buildingIcon: {fileID: 1238771136209483447}
   buildingName: {fileID: 4205171148877572950}
+  emptySprite: {fileID: 21300000, guid: a2b3bcd2a22484bf58a58a66c26b7ef0, type: 3}
 --- !u!225 &8999806838620750224
 CanvasGroup:
   m_ObjectHideFlags: 0

@@ -76,6 +76,9 @@ public class RegionUIController : MonoBehaviour
     [SerializeField]
     BuildOptionController[] buildOptionControllers;
 
+    [SerializeField]
+    Sprite emptySprite;
+
     int activeBuildingSlot;
     Building selectedBuilding;
 
@@ -236,7 +239,7 @@ public class RegionUIController : MonoBehaviour
         if (building == null)
         {
             buildingName.text = "None";
-            buildingSprite.sprite = null;
+            buildingSprite.sprite = emptySprite;
             buildingDescription.text = "";
             buildingGoldCost.text = "--- <sprite=\"final_icons\" index=4>";
             buildingWoodCost.text = "--- <sprite=\"final_icons\" index=6>";

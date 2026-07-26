@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Stables
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingName: Stables
-  buildingIcon: {fileID: 21300000, guid: 76e192d0099ca4c5ca4d89a17c40bd9c, type: 3}
+  buildingIcon: {fileID: 21300000, guid: 28413aac7177a4b2f8283584dcfa2373, type: 3}
   buildingDescription: Unlocks access to <sprite="final_icons" index=3>.
   woodCost: 150
   goldCost: 50
