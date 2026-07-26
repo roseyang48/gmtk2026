@@ -46,7 +46,7 @@ public class CombatHandler : MonoBehaviour
     {
         StartCoroutine("SpawnPlayerArmy", playerArmy);
         StartCoroutine("SpawnEnemyArmy", enemyArmy);
-        AudioManager.Instance.PlayMusic(bgm, transform, 0.7f);
+        AudioManager.Instance.PlayMusic(bgm, transform, 0.7f, true);
     }
     public void AddSurvivor(ArmyManager.UnitType type)
     {
@@ -164,13 +164,13 @@ public class CombatHandler : MonoBehaviour
                         AddSurvivor(obj.GetComponent<Unit>().GetUnitType());
                     }
                     StartCoroutine("RemoveUnits", "PlayerUnit");
-                    AudioManager.Instance.PlayMusic(win, transform, 0.7f);
+                    AudioManager.Instance.PlayMusic(win, transform, 0.7f, false);
                     playerWon = true;
                     break;
                 case Team.Enemy:
                     titleText.text = "Down For The Count...";
                     StartCoroutine("RemoveUnits", "EnemyUnit");
-                    AudioManager.Instance.PlayMusic(lose, transform, 0.7f);
+                    AudioManager.Instance.PlayMusic(lose, transform, 0.7f, false);
                     break;
                 default:
                     Debug.LogError("UNRECOGNIZED WINNER");

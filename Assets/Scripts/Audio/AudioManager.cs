@@ -47,7 +47,7 @@ public class AudioManager : MonoBehaviour
             Destroy(source.gameObject, source.clip.length + 0.1f);
         }
     }
-    public void PlayMusic(AudioClip audioClip, Transform spawnTransform, float volume)
+    public void PlayMusic(AudioClip audioClip, Transform spawnTransform, float volume, bool loop)
     {
         if(currMusic != null)
         {
@@ -57,7 +57,7 @@ public class AudioManager : MonoBehaviour
         AudioSource source = Instantiate(musicObject, spawnTransform.position, Quaternion.identity);
         source.clip = audioClip;
         source.volume = volume;
-        source.loop = true;
+        source.loop = loop;
         currMusic = source;
         source.Play();
     }
