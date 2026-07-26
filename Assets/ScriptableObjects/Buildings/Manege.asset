@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd51f399e839416ab6de21600af4c19, type: 3}
   m_Name: Manege
   m_EditorClassIdentifier: Assembly-CSharp::Building
-  buildingName: "Maneg\xE9"
+  buildingName: "Man\xE8ge"
   buildingIcon: {fileID: 21300000, guid: 7dae60dfd84bc462ca4fe025c52ab4a0, type: 3}
   buildingDescription: <sprite="final_icons" index=3> charge more frequently and
     deal more damage when charging.
