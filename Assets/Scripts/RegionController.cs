@@ -12,6 +12,9 @@ public class RegionController : MonoBehaviour
     [SerializeField]
     SpriteRenderer selectSpriteRenderer;
 
+    [SerializeField]
+    SpriteRenderer flagRenderer;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -53,5 +56,10 @@ public class RegionController : MonoBehaviour
     public void HideSelectSprite()
     {
         selectSpriteRenderer.enabled = false;
+    }
+
+    public void SetRegionFlag(Sprite flagSprite)
+    {
+        flagRenderer.sprite = flagSprite;
     }
 }
