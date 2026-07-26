@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource sfxObject;
     [SerializeField] private AudioSource musicObject;
     private List<AudioSource> SFXGroup = new List<AudioSource>();
+    private AudioSource currMusic;
     [SerializeField] int maxPolyphony;
     void Awake()
     {
@@ -48,10 +49,16 @@ public class AudioManager : MonoBehaviour
     }
     public void PlayMusic(AudioClip audioClip, Transform spawnTransform, float volume)
     {
+        if(currMusic != null)
+        {
+            currMusic.Stop();
+        }
         AudioSource source = Instantiate(musicObject, spawnTransform.position, Quaternion.identity);
         source.clip = audioClip;
         source.volume = volume;
         source.loop = true;
+        Destroy(currMusic.gameObject);
+        currMusic = source;
         source.Play();
     }
     private IEnumerator RemoveSource(float time, AudioSource obj)

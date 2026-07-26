@@ -282,7 +282,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41.35
+  m_fontSize: 41.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -556,7 +556,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 53.15
+  m_fontSize: 53.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1157,7 +1157,7 @@ MonoBehaviour:
   cavalryObject: {fileID: 5199473792281518031, guid: 1aff9ccfdcdd9fc47884a08b60d235b5, type: 3}
   playerSpawnPointY: -6
   enemySpawnPointY: 6
-  playerHatColor: {r: 0.0076143635, g: 0.48427665, b: 0.022471648, a: 1}
+  playerHatColor: {r: 0.12278541, g: 0.11047808, b: 0.7169812, a: 1}
   enemyHatColor: {r: 0.59748423, g: 0, b: 0, a: 1}
   titleText: {fileID: 1931128954}
   peasantCountText: {fileID: 1264228793}
@@ -1166,7 +1166,6 @@ MonoBehaviour:
   cavalryCountText: {fileID: 215184628}
   endMenuAnimator: {fileID: 1849534698}
   vanishTime: 1
-  maps: []
 --- !u!4 &1142946879
 Transform:
   m_ObjectHideFlags: 0
@@ -1453,7 +1452,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 53.15
+  m_fontSize: 53.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1590,7 +1589,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 53.15
+  m_fontSize: 53.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2082,7 +2081,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 53.15
+  m_fontSize: 53.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2628,7 +2627,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50.5
+  m_fontSize: 50.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2765,7 +2764,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 39.4
+  m_fontSize: 39.45
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
