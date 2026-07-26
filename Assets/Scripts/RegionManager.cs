@@ -20,11 +20,7 @@ public class RegionManager : MonoBehaviour
         {
             Instance = this;
         }
-    }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
         regions = new Region[regionInitializers.Length];
 
         for (int i = 0; i < regionInitializers.Length; i++)
@@ -49,6 +45,12 @@ public class RegionManager : MonoBehaviour
 
             currentRegion.SetRegionNeighbors(neighborRegions);
         }
+    }
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+
     }
 
     // Update is called once per frame
