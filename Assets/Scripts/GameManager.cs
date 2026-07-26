@@ -32,6 +32,12 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
 
+    [SerializeField]
+    Sprite liberatedSprite;
+
+    [SerializeField]
+    Sprite occupiedSprite;
+
     [SerializeField] private Transform armyPopupTransform;
     void Awake()
     {
@@ -65,6 +71,10 @@ public class GameManager : MonoBehaviour
             }
         }
         CountCounterAnimation.Instance.InitializeCounter(occupiedCount);
+
+        UpdateUIReferences();
+
+        DrawRegionFlags();
     }
 
     // Update is called once per frame
@@ -408,6 +418,8 @@ public class GameManager : MonoBehaviour
             CountCounterAnimation.Instance.TickDown();
         }
         targetRegion = -1;
+
+        DrawRegionFlags();
     }
 
     public void UpdateUIReferences()
@@ -446,5 +458,13 @@ public class GameManager : MonoBehaviour
     public float GetTechBuildingCostMod()
     {
         return techBuildingCostMod;
+    }
+
+    public void DrawRegionFlags()
+    {
+        for (int i = 0; i < regionControllers.Length; i++)
+        {
+            regionControllers[i].SetRegionFlag(RegionManager.Instance.GetRegion(i).IsRegionOccupied() ? occupiedSprite : liberatedSprite);
+        }
     }
 }
