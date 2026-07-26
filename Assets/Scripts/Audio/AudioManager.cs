@@ -52,12 +52,12 @@ public class AudioManager : MonoBehaviour
         if(currMusic != null)
         {
             currMusic.Stop();
+            Destroy(currMusic.gameObject);
         }
         AudioSource source = Instantiate(musicObject, spawnTransform.position, Quaternion.identity);
         source.clip = audioClip;
         source.volume = volume;
         source.loop = true;
-        Destroy(currMusic.gameObject);
         currMusic = source;
         source.Play();
     }
