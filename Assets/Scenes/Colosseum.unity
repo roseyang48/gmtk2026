@@ -282,7 +282,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41.8
+  m_fontSize: 41.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -556,7 +556,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 53.75
+  m_fontSize: 53.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -790,14 +790,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ARMYTEST
   testPlayerArmy:
     peasantCount: 5
-    infantryCount: 0
-    rangedCount: 0
-    cavalryCount: 0
+    infantryCount: 5
+    rangedCount: 5
+    cavalryCount: 5
   testEnemyArmy:
-    peasantCount: 8
-    infantryCount: 0
-    rangedCount: 0
-    cavalryCount: 0
+    peasantCount: 5
+    infantryCount: 5
+    rangedCount: 5
+    cavalryCount: 5
   peasantUpgraded: 1
   rangedUpgraded: 1
   cavalryUpgraded: 1
@@ -1166,6 +1166,7 @@ MonoBehaviour:
   cavalryCountText: {fileID: 215184628}
   endMenuAnimator: {fileID: 1849534698}
   vanishTime: 1
+  maps: []
 --- !u!4 &1142946879
 Transform:
   m_ObjectHideFlags: 0
@@ -1452,7 +1453,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 53.75
+  m_fontSize: 53.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1589,7 +1590,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 53.75
+  m_fontSize: 53.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2081,7 +2082,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 53.75
+  m_fontSize: 53.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2627,7 +2628,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 51.05
+  m_fontSize: 50.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2764,7 +2765,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 39.85
+  m_fontSize: 39.4
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1

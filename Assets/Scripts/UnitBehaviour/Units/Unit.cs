@@ -17,13 +17,16 @@ public class Unit : MonoBehaviour
     public Animator animator;
     public Rigidbody2D rb;
     public SpriteRenderer hpSprite;
+    public SpriteRenderer hpSpriteBG;
+    [SerializeField] private float hpRingSize;
     public Gradient hpGradient;
     public UnitStateMachine StateMachine;
     public IdleState IdleState;
     public FleeState FleeState;
     public AttackState AttackState;
     public ChaseState ChaseState;
-    protected MaterialPropertyBlock mpb;
+    protected MaterialPropertyBlock hpMPB;
+    protected MaterialPropertyBlock hpBGMPB;
     [SerializeField] protected NavMeshAgent agent;
     [SerializeField] protected NavMeshObstacle obstacle;
     protected bool hasFled;
@@ -37,7 +40,8 @@ public class Unit : MonoBehaviour
         agent.speed = statBlock.moveSpeed;
         agent.angularSpeed = statBlock.rotationSpeed;
         obstacle.enabled = false;
-        mpb = new MaterialPropertyBlock();
+        hpMPB = new MaterialPropertyBlock();
+        hpBGMPB = new MaterialPropertyBlock();
         StateMachine = new UnitStateMachine();
         IdleState = new IdleState(this, StateMachine);
         FleeState = new FleeState(this, StateMachine);
@@ -47,9 +51,14 @@ public class Unit : MonoBehaviour
     void Start()
     {
         currHP = statBlock.maxHP;
-        hpSprite.GetPropertyBlock(mpb);
-        mpb.SetFloat("_Arc2", 360 * (1 - currHP / statBlock.maxHP));
-        hpSprite.SetPropertyBlock(mpb);
+        hpSprite.GetPropertyBlock(hpMPB);
+        hpSpriteBG.GetPropertyBlock(hpBGMPB);
+        hpBGMPB.SetFloat("_Arc1", 180 - hpRingSize/2);
+        hpBGMPB.SetFloat("_Arc2", 180 - hpRingSize/2);
+        hpMPB.SetFloat("_Arc2", 180 - hpRingSize/2);
+        hpMPB.SetFloat("_Arc1", 180 - hpRingSize/2 + hpRingSize * (1 - currHP/statBlock.maxHP));
+        hpSprite.SetPropertyBlock(hpMPB);
+        hpSpriteBG.SetPropertyBlock(hpBGMPB);
         hpSprite.color = hpGradient.Evaluate(1 - currHP / statBlock.maxHP);
         StateMachine.Initialize(IdleState);
     }
@@ -134,8 +143,8 @@ public class Unit : MonoBehaviour
         {
             Die();
         }
-        mpb.SetFloat("_Arc2", 360 * (1 - currHP / statBlock.maxHP));
-        hpSprite.SetPropertyBlock(mpb);
+        hpMPB.SetFloat("_Arc1", 180 - hpRingSize/2 + hpRingSize * (1 - currHP/statBlock.maxHP));
+        hpSprite.SetPropertyBlock(hpMPB);
         hpSprite.color = hpGradient.Evaluate(1 - currHP / statBlock.maxHP);
     }
     private void AnimationTriggerEvent(AnimationTriggerType type)
