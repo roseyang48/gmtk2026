@@ -1,0 +1,261 @@
+fileFormatVersion: 2
+guid: dff1c202b42534c559785c6a0bed6144
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2483638640257212010
+    second: dwtctext_0
+  - first:
+      213: 2702547763689804199
+    second: dwtctext_1
+  - first:
+      213: -325760066319028507
+    second: dwtctext_2
+  - first:
+      213: -8080639764668108059
+    second: dwtctext_3
+  - first:
+      213: 3536968544798985698
+    second: dwtctext_4
+  - first:
+      213: 9029187767980458983
+    second: dwtctext_5
+  - first:
+      213: -8260799338138016375
+    second: dwtctext_6
+  - first:
+      213: 187138519229661834
+    second: dwtctext_7
+  - first:
+      213: -6585788811152350260
+    second: dwtctext_8
+  - first:
+      213: -2030024254100006381
+    second: dwtctext_9
+  - first:
+      213: 4990261459653241492
+    second: dwtctext_10
+  - first:
+      213: -5790863385363349080
+    second: dwtctext_11
+  - first:
+      213: -6403092004950205317
+    second: dwtctext_12
+  - first:
+      213: 4005425922727391080
+    second: dwtctext_13
+  - first:
+      213: 3027323539117407269
+    second: dwtctext_14
+  - first:
+      213: 1836823500552454511
+    second: dwtctext_15
+  - first:
+      213: 3644451409167723808
+    second: dwtctext_16
+  - first:
+      213: -6364241523885342023
+    second: dwtctext_17
+  - first:
+      213: -4803474325750247455
+    second: dwtctext_18
+  - first:
+      213: 1718814024089397895
+    second: dwtctext_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 330, y: 355, z: 603, w: 171}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: dwtctext_0
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1150
+        width: 1731
+        height: 394
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6e17f63f28a77220800000000000000
+      internalID: 2483638640257212010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dwtctext_1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 756
+        width: 1731
+        height: 394
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a1d1435fd0618520800000000000000
+      internalID: 2702547763689804199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dwtctext_2
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 362
+        width: 1731
+        height: 394
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5eeeb0512faaa7bf0800000000000000
+      internalID: -325760066319028507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: dee2dd5f44bfd4456b6eca525b6328a8
+    internalID: -165027098
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1731.0,"y":394.0},"gridSpriteOffset":{"x":320.0,"y":170.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      dwtctext_0: 2483638640257212010
+      dwtctext_1: 2702547763689804199
+      dwtctext_2: -325760066319028507
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

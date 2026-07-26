@@ -18,4 +18,14 @@ public class MainMenuController : MonoBehaviour
     {
         SceneSwitcher.Instance.LoadScene(SceneSwitcher.SceneType.MAP);
     }
+
+    public void SettingsMenu()
+    {
+        
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }

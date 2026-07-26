@@ -228,17 +228,17 @@ public class GameManager : MonoBehaviour
     {
         if(gold != 0)
         {
-            PopUpHandler.Instance.SpawnPopup((gold > 0 ? "+" : "-") + gold + " <sprite=\"final_icons\" index=4>!", GetRegionTransform(regionNumber).position);
+            PopUpHandler.Instance.SpawnPopup((gold > 0 ? "+" : "") + gold + " <sprite=\"final_icons\" index=4>!", GetRegionTransform(regionNumber).position);
             yield return new WaitForSeconds(0.5f);
         }
         if(food != 0)
         {
-            PopUpHandler.Instance.SpawnPopup((food > 0 ? "+" : "-") + food + " <sprite=\"final_icons\" index=5>!", GetRegionTransform(regionNumber).position);
+            PopUpHandler.Instance.SpawnPopup((food > 0 ? "+" : "") + food + " <sprite=\"final_icons\" index=5>!", GetRegionTransform(regionNumber).position);
             yield return new WaitForSeconds(0.5f);
         }
         if(wood != 0)
         {
-            PopUpHandler.Instance.SpawnPopup((wood > 0 ? "+" : "-") + wood + " <sprite=\"final_icons\" index=6>!", GetRegionTransform(regionNumber).position);
+            PopUpHandler.Instance.SpawnPopup((wood > 0 ? "+" : "") + wood + " <sprite=\"final_icons\" index=6>!", GetRegionTransform(regionNumber).position);
             yield return new WaitForSeconds(0.5f);
         }
     }
