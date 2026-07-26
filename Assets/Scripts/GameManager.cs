@@ -95,6 +95,11 @@ public class GameManager : MonoBehaviour
     {
         unitBuildController.ShowCanvas();
         regionUIController.HideCanvas();
+
+        foreach (RegionController region in regionControllers)
+        {
+            region.HideSelectSprite();
+        }
     }
 
     public void BuildingSelected(int buildingSlot)
